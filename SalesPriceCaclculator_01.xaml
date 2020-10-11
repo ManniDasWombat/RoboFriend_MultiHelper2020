@@ -1,0 +1,102 @@
+﻿<Page x:Class="RoboFriend_MultiHelper2020.SalesPriceCaclculator_01"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
+      mc:Ignorable="d" 
+      d:DesignHeight="780" d:DesignWidth="800"
+      Title="SalesPriceCaclculator_01" Background="#FFF9F93C">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Name="LB_NettoEKP" Content="= Nettoeinkaufspreis" Grid.Row="1" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_LieferR" Content="- Lieferantenrabatt" Grid.Row="2" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_ZielEKP" Content="= Zieleinkaufspreis" Grid.Row="3" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_LieferSKO" Content="- Lieferantenskonto" Grid.Row="4" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_BarEK" Content="= Bareinkaufspreis" Grid.Row="5" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_BezugsK" Content="+ Bezugskosten" Grid.Row="6" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_BezugsP" Content="= Bezugspreis" Grid.Row="7" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_HdlusK" Content="+ Handlungskosten" Grid.Row="8" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_SelbstKP" Content="= Selbstkostenpreis" Grid.Row="9" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_GewinnAS" Content="+ Gewinnaufschlag" Grid.Row="10" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_BarVK" Content="= Barverkaufspreis" Grid.Row="11" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_KuSKOundVtrPROV" Content="+ Skonto und Provision" Grid.Row="12" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_ZielVK" Content="= Zielverkaufspreis" Grid.Row="13" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_KundenR" Content="+ Kundenrabatt" Grid.Row="14" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_ListeVKPNT" Content="= Listenpreis Netto" Grid.Row="15" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_MwST" Content="+ Mehrwertsteuer" Grid.Row="16" Grid.Column="0" FontSize="18" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <Label Name="LB_ListeVKPBR" Content="= Listenpreis Brutto" Grid.Row="17" Grid.Column="0" FontSize="18" Background="White" BorderThickness="0,0,0,0"/>
+
+        <TextBox Name="TB_NettoEKP" Text="€" Grid.Column="2" Grid.Row="1" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0" KeyDown="TB_NettoEKP_KeyDown"/>
+        <TextBox Name="TB_ZielEKP" Text="€" Grid.Column="2" Grid.Row="3" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BarEK" Text="€" Grid.Column="2" Grid.Row="5" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BezugsP" Text="€" Grid.Column="2" Grid.Row="7" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_SelbstKP" Text="€" Grid.Column="2" Grid.Row="9" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BarVK" Text="€" Grid.Column="2" Grid.Row="11" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ZielVK" Text="€" Grid.Column="2" Grid.Row="13" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ListeVKPNT" Text="€" Grid.Column="2" Grid.Row="15" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ListeVKPBR" Text="€" Grid.Column="2" Grid.Row="17" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0" KeyDown="TB_ListeVKPBR_KeyDown"/>
+
+        <TextBox Name="TB_LieferR" Text="€" Grid.Column="2" Grid.Row="2" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_LieferSKO" Text="€" Grid.Column="2" Grid.Row="4" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BezugsK" Text="€" Grid.Column="2" Grid.Row="6" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_HdlusK" Text="€" Grid.Column="2" Grid.Row="8" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_GewinnAS" Text="€" Grid.Column="2" Grid.Row="10" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_KuSKOundVtrPROV" Text="€" Grid.Column="2" Grid.Row="12" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_KundenR" Text="€" Grid.Column="2" Grid.Row="14" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_MwST" Text="€" Grid.Column="2" Grid.Row="16" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+
+        <TextBox Name="TB_NettoEKP_P" Text="%" Grid.Column="1" Grid.Row="1" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ZielEKP_P" Text="%" Grid.Column="1" Grid.Row="3" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BarEK_P" Text="%" Grid.Column="1" Grid.Row="5" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BezugsP_P" Text="%" Grid.Column="1" Grid.Row="7" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_SelbstKP_P" Text="%" Grid.Column="1" Grid.Row="9" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BarVK_P" Text="%" Grid.Column="1" Grid.Row="11" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ZielVK_P" Text="%" Grid.Column="1" Grid.Row="13" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ListeVKPNT_P" Text="%" Grid.Column="1" Grid.Row="15" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_ListeVKPBR_P" Text="%" Grid.Column="1" Grid.Row="17" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" BorderThickness="0,0,0,0"/>
+
+        <TextBox Name="TB_LieferR_P" Text="%" Grid.Column="1" Grid.Row="2" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_LieferSKO_P" Text="%" Grid.Column="1" Grid.Row="4" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_BezugsK_P" Text="%" Grid.Column="1" Grid.Row="6" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_HdlusK_P" Text="%" Grid.Column="1" Grid.Row="8" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_GewinnAS_P" Text="%" Grid.Column="1" Grid.Row="10" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_KuSKOundVtrPROV_P" Text="%" Grid.Column="1" Grid.Row="12" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_KundenR_P" Text="%" Grid.Column="1" Grid.Row="14" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+        <TextBox Name="TB_MwST_P" Text="%" Grid.Column="1" Grid.Row="16" FontSize="20" TextWrapping="Wrap" TextAlignment="Center" Background="#FFF2FD84" BorderThickness="0,0,0,0"/>
+
+        <Button Name="BT_Calc" Content="Berechnen"  Grid.Column="3" Grid.Row="1" Grid.RowSpan="9"  Click="BT_Calc_Click" Background="#FFFFC500" BorderThickness="0,0,0,0" FontWeight="Bold" FontSize="32"/>
+        <Button Name="BT_Erase" Content="C L E A R" Grid.Column="3" Grid.Row="10" Grid.RowSpan="8" Click="BT_Erase_Click" Background="#FFFFC500" BorderThickness="0,0,0,0" FontSize="42" FontWeight="Bold"/>
+
+        <Label Name="Element_Symbol" Content="Kalkulationselement" Grid.Column="0" Grid.Row="0" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <Label Name="Percent_Symbol" Content="%" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Name="Currency_Symbol" Content="€" Grid.Column="2" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" FontWeight="Bold" />
+    </Grid>
+</Page>

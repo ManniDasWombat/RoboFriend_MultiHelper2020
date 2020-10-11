@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="E_To_D.png" />
+    <None Remove="Images\E_To_D.png" />
+    <None Remove="startimage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="E_To_D.png" />
+    <Resource Include="Images\E_To_D.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="startimage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Images\startimage.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

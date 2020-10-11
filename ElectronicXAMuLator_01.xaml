@@ -1,0 +1,59 @@
+﻿<Page x:Class="RoboFriend_MultiHelper2020.ElectronicXAMuLator_01"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="ElectronicXAMuLator_01" Background="#FF07D7F7">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="97*"/>
+        </Grid.RowDefinitions>
+        <Menu Name="TopMenu" Margin="0" Grid.Row="0" Background="White">
+            <MenuItem Header="_RegisterkarteAuswahl">
+                <MenuItem Header="_Submenüpunkt1" />
+                <Separator />
+                <MenuItem Header="_Submenüpunkt2" />
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="_RegisterkarteAuswah2">
+                <MenuItem Header="_Submenüpunkt1" />
+                <Separator />
+                <MenuItem Header="_Submenüpunkt2" />
+            </MenuItem>
+        </Menu>
+        <GroupBox Name="GB_Rechenweg" Header="Rechenweg" Margin="30,17,30,0" Grid.Row="1" Foreground="White" Height="70" VerticalAlignment="Top">
+            <Label Name="LB_Rechenweg" Content="2342342" Margin="0" BorderThickness="3" FontSize="24" FontWeight="Normal"/>
+        </GroupBox>
+        <GroupBox Name="GB_Ergebnis" Header="Ergebnis" Margin="30,105,331,0" Grid.Row="1" Foreground="White" Height="70" VerticalAlignment="Top">
+            <Label x:Name="LB_Ergebnis" Content="23423423" BorderThickness="3" FontSize="24" FontWeight="Bold"/>
+        </GroupBox>
+        <GroupBox Header="Numblock" Margin="29,196,331,37" Grid.Row="1" Foreground="White" Background="#FF07C0F7"/>
+        <Button Name="B1" Content="1" HorizontalAlignment="Left" Margin="46,225,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B2" Content="2" HorizontalAlignment="Left" Margin="140,225,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B3" Content="3" HorizontalAlignment="Left" Margin="236,225,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B4" Content="4" HorizontalAlignment="Left" Margin="46,320,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B5" Content="5" HorizontalAlignment="Left" Margin="140,320,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B6" Content="6" HorizontalAlignment="Left" Margin="236,320,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B7" Content="7" HorizontalAlignment="Left" Margin="46,415,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B8" Content="8" HorizontalAlignment="Left" Margin="140,415,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B9" Content="9" HorizontalAlignment="Left" Margin="236,415,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="Bdel" Content="DELETE" HorizontalAlignment="Left" Margin="46,510,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="18" FontWeight="Bold" Background="Yellow"/>
+        <Button Name="B0" Content="0" HorizontalAlignment="Left" Margin="140,510,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" Background="#FFF5F505" FontSize="24" FontWeight="Bold"/>
+        <Button Name="Bcomma" Content="," HorizontalAlignment="Left" Margin="236,510,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="80" FontSize="24" FontWeight="Bold" Background="Yellow"/>
+
+        <Button Name="Bplus" Content="+" HorizontalAlignment="Left" Margin="400,341,0,0" Grid.Row="1" VerticalAlignment="Top" Height="60" Width="126" Background="#FF07C0F7" FontWeight="Bold" FontSize="24"/>
+        <Button Name="Bminus" Content="-" HorizontalAlignment="Left" Margin="542,341,0,0" Grid.Row="1" VerticalAlignment="Top" Height="60" Width="128" Background="#FF07C0F7" FontWeight="Bold" FontSize="24"/>
+        <Button Name="Bmultiply" Content="x" HorizontalAlignment="Left" Margin="400,416,0,0" Grid.Row="1" VerticalAlignment="Top" Height="60" Width="126" Background="#FF07C0F7" FontWeight="Bold" FontSize="24"/>
+        <Button Name="Bdivide" Content=":" HorizontalAlignment="Left" Margin="542,416,0,0" Grid.Row="1" VerticalAlignment="Top" Height="60" Width="128" Background="#FF07C0F7" FontWeight="Bold" FontSize="24"/>
+        <Button Name="Bpercent" Content="%" HorizontalAlignment="Left" Margin="400,491,0,0" Grid.Row="1" VerticalAlignment="Top" Height="60" Width="126" Background="#FF07C0F7" FontSize="24" FontWeight="Bold"/>
+        <Button Name="Bresult" Content="=" HorizontalAlignment="Left" Margin="542,491,0,37" Grid.Row="1" Width="128" Background="#FF13DA9B" FontWeight="Bold" FontSize="48"/>
+        <Button Name="Bclear" Content="CLEAR" HorizontalAlignment="Left" Margin="400,566,0,0" Grid.Row="1" VerticalAlignment="Top" Height="60" Width="126" Background="#FF13DA9B" FontSize="18" FontWeight="Bold"/>
+        <GroupBox x:Name="GB_past" Header="Verlauf" Margin="400,105,30,0" Grid.Row="1" Foreground="White" Height="216" VerticalAlignment="Top">
+            <Label x:Name="LB_past" Content="23423423" Margin="0" BorderThickness="3" FontSize="12" HorizontalContentAlignment="Right"/>
+        </GroupBox>
+    </Grid>
+</Page>

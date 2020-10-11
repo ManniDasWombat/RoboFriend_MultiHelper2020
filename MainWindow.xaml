@@ -1,0 +1,33 @@
+﻿<Window x:Class="RoboFriend_MultiHelper2020.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
+        mc:Ignorable="d"
+        Title="RoboFriend-Multi-Helper-2020" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="780"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="_Calculators">
+                <MenuItem Name="BestBuddy" Header="_BestMathBuddy" Click="BestBuddy_Click"/>
+                <MenuItem Name="EC_NR1" Header="_ElectronicXAMuLator NR.1" Click="EX_NR1_Click"/>
+                <MenuItem Name="BWL_SPC" Header="_BWL SalesPriceCaclculator 1.0" Click="BWL_SPC_Click"/>
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="_Warehouser">
+                <MenuItem Name="VocMaster" Header="_VocabularyMaster" Click="VocMaster_Click"/>
+                <MenuItem Name="Listaholic" Header="_Listaholic" Click="Listaholic_Click" />
+                <MenuItem Name="TPS" Header="_RoboThePossessedStoreman" Click="TPS_Click" />
+                <MenuItem Name="ListFan" Header="_RoboTheListFanatic" Click="ListFan_Click" />
+                <MenuItem Name="TRP" Header="_RoboTheRestlessPrepper" Click="TRP_Click" />
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="GamesCollection" Header="_GamesCollection" Click="GamesCollection_Click"/>
+        </Menu>
+        <Frame Name="StoreWindow" Content="" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
