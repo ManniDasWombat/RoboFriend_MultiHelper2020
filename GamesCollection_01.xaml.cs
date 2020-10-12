@@ -22,15 +22,20 @@ namespace RoboFriend_MultiHelper2020
         public GamesCollection_01()
         {
             InitializeComponent();
-            Button1.Content = "Göttisheimer\nThe Puzzle";
+            Button1.Content = "GöttisheimER\nThe Puzzle";
             Button2.Content = "Funfair Shooter";
         }
-
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
             ButtonPuzzle GoettisheimerTP = new ButtonPuzzle();
             GoettisheimerTP.Show();
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            FunfairShooter FunFairShoot = new FunfairShooter();
+            FunFairShoot.Show();
         }
     }
 }
