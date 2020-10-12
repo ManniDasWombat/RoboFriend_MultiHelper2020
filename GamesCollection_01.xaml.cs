@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoboFriend_MultiHelper2020.FreeGames;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,15 @@ namespace RoboFriend_MultiHelper2020
         public GamesCollection_01()
         {
             InitializeComponent();
+            Button1.Content = "Göttisheimer\nThe Puzzle";
+            Button2.Content = "Funfair Shooter";
+        }
+
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonPuzzle GoettisheimerTP = new ButtonPuzzle();
+            GoettisheimerTP.Show();
         }
     }
 }

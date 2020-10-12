@@ -28,6 +28,7 @@ namespace RoboFriend_MultiHelper2020
         readonly string NewRow = Environment.NewLine;
         public int TestWert;
         string ComparisonVXZ;
+        bool TestResult;
 
         public List<VokabelListe> Complete_List = new List<VokabelListe>();
         public List<VokabelListe> RandomListToAdd_List = new List<VokabelListe>();
@@ -151,7 +152,7 @@ namespace RoboFriend_MultiHelper2020
             {
                 VokabelListe CreateNewRandomList = new VokabelListe();
                 string StudentAttempt = TB_12.Text;
-                bool TestResult = CreateNewRandomList.SearchingTranslation(StudentAttempt, ComparisonVXZ, Complete_List);
+                TestResult = CreateNewRandomList.SearchingTranslation(StudentAttempt, ComparisonVXZ, Complete_List);
                 if (TestResult == true)
                 {
                     TBlock_2.Visibility = Visibility.Visible;

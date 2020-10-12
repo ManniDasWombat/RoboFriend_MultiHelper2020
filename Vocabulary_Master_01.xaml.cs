@@ -23,6 +23,8 @@ namespace RoboFriend_MultiHelper2020
         public Vocabulary_Master_01()
         {
             InitializeComponent();
+            brush.ImageSource = new BitmapImage(new Uri(@".\Images\Vocabulary\E_To_D.png", UriKind.Relative));
+            BT_Switch.Background = brush;
         }
 
         readonly ImageBrush brush = new ImageBrush();
@@ -32,13 +34,13 @@ namespace RoboFriend_MultiHelper2020
         {
             if (ModuloSwitchButton % 2 == 0)
             {
-                brush.ImageSource = new BitmapImage(new Uri(@"Images\E_To_D.png", UriKind.Relative));
+                brush.ImageSource = new BitmapImage(new Uri(@".\Images\Vocabulary\E_To_D.png", UriKind.Relative));
                 BT_Switch.Background = brush;
                 ModuloSwitchButton++;
             }
             else if (ModuloSwitchButton % 2 != 0)
             {
-                brush.ImageSource = new BitmapImage(new Uri(@"Images\D_To_E.png", UriKind.Relative));
+                brush.ImageSource = new BitmapImage(new Uri(@".\Images\Vocabulary\D_To_E.png", UriKind.Relative));
                 BT_Switch.Background = brush;
                 ModuloSwitchButton++;
             }

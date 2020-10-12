@@ -7,23 +7,82 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="E_To_D.png" />
-    <None Remove="Images\E_To_D.png" />
-    <None Remove="startimage.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\01.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\02.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\03.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\04.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\05.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\06.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\07.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\08.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\09.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\10.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\11.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\12.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\13.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\14.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\15.jpg" />
+    <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\16.jpg" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Resource Include="E_To_D.png" />
-    <Resource Include="Images\E_To_D.png">
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\01.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="startimage.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Images\startimage.jpg">
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\02.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\03.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\04.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\05.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\06.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\07.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\08.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\09.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\15.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeGames\Images\ButtonPuzzle_Level_01\16.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\startimage.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <EmbeddedResource Include="Images\Vocabulary\D_To_E.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Vocabulary\E_To_D.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

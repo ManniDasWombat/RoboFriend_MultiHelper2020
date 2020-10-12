@@ -31,7 +31,7 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Row="1" Grid.Column="1" Content="" Name="BT_Switch" IsEnabled="True" Click="BT_Switch_Click" >
                 <Button.Background>
-                    <ImageBrush ImageSource="/E_To_D.png" Viewport="0,0,1,1" Stretch="Fill"/>
+                    <ImageBrush Viewport="0,0,1,1" Stretch="Fill"/>
                 </Button.Background>
             </Button>
         </Grid>

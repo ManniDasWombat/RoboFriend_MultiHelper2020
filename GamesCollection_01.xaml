@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="Button1" Content="Open new Window" Grid.Column="0" Grid.Row="0" Foreground="White" Background="#FF2DC515" FontSize="20" FontWeight="Bold"/>
+        <Button Name="Button1" Content="" Grid.Column="0" Grid.Row="0" Foreground="White" Background="#FF2DC515" FontSize="20" FontWeight="Bold" Click="Button1_Click"/>
         <Button Name="Button2" Content="Button" Grid.Column="1" Grid.Row="0" Foreground="White" Background="#FF2DC515" FontSize="20" FontWeight="Bold"/>
         <Button Name="Button3" Content="Button" Grid.Column="2" Grid.Row="0" Foreground="White" Background="#FF2DC515" FontSize="20" FontWeight="Bold"/>
         <Button Content="Button" Grid.Column="0" Grid.Row="1" Foreground="White" Background="#FF2DC515" FontSize="20" FontWeight="Bold"/>
