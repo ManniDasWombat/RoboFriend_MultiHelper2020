@@ -4,9 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
-      mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="1000"
-      Title="Vocabulary_Master_01">
+      mc:Ignorable="d"
+      MinHeight="450" MinWidth="1185"
+      Title="Vocabulary_Master_01" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
     <Grid Background="#FF20A9F7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
@@ -62,8 +62,8 @@
             <TextBox Text="" Name="TB_D" FontSize="22" Background="#FF08CAF5" TextAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
         </Grid>
         <Label Content="" Name="solution_lb" FontSize="26" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" Grid.Row="1" Background="#FF08CAF5"/>
-        <Button Content="Add" Name="start_btn" Grid.Row="2" Grid.Column="0" FontSize="30" VerticalContentAlignment="Center" Background="#FF20A9F7"/>
-        <Button Content="Start" Name="free_btn1" Grid.Row="2" Grid.Column="1" FontSize="40" VerticalContentAlignment="Center" Background="#FF20A9F7"/>
-        <Button Content="Remove" Name="free_btn2" Grid.Row="2" Grid.Column="2" FontSize="30" VerticalContentAlignment="Center" Background="#FF20A9F7"/>
+        <Button Content="Add" Name="BTN_Add" Grid.Row="2" Grid.Column="0" FontSize="30" VerticalContentAlignment="Center" Background="#FF20A9F7" Click="BTN_Add_Click"/>
+        <Button Content="Start" Name="BTN_Start" Grid.Row="2" Grid.Column="1" FontSize="40" VerticalContentAlignment="Center" Background="#FF20A9F7" Click="BTN_Start_Click" />
+        <Button Content="Remove" Name="BTN_Remove" Grid.Row="2" Grid.Column="2" FontSize="30" VerticalContentAlignment="Center" Background="#FF20A9F7" Click="BTN_Remove_Click"/>
     </Grid>
 </Page>

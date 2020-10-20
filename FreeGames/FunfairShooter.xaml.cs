@@ -28,8 +28,6 @@ namespace RoboFriend_MultiHelper2020.FreeGames
         private bool fastmode = false;
         private int speed;
         private int zaehler;
-        private object speedleverage;
-
 
         public FunfairShooter()
         {

@@ -5,10 +5,37 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="800"
       Title="ListFanatic01">
-
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="TB_00" Text="" TextWrapping="Wrap" Background="#FFAEFF00" Margin="0,0,2,2" KeyDown="TB_00_KeyDown"/>
+        <TextBox Name="TB_01" Text="" TextWrapping="Wrap" Grid.Column="1" Background="#FF05C9F5" Margin="2,0,0,2" KeyDown="TB_01_KeyDown"/>
+        <TextBox Name="TB_10" Text="" TextWrapping="Wrap" Grid.Row="1" Background="#FF48D605" Margin="0,2,2,0" KeyDown="TB_10_KeyDown"/>
+        <TextBox Name="TB_11" Text="" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Background="#FF08EBF5" Margin="2,2,0,0" KeyDown="TB_11_KeyDown"/>
+        <Button Name="BT_00" Content="Speichern" Grid.Row="3" Background="#FFFFDE0C" Margin="0,0,2,2" BorderThickness="6" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_10" Content="Anzeigen" Grid.Row="4" Background="#FFFFDE0C" Margin="0,2,2,0" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_10_Click"/>
+        <Button Name="BT_01" Content="Laden" Grid.Row="3" Grid.Column="1" Background="#FFFFDE0C" Margin="2,0,0,2" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_01_Click"/>
+        <Button Name="BT_11" Content="Löschen" Grid.Row="4" Grid.Column="1" Background="#FFFFDE0C" Margin="2,2,0,0" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_11_Click"/>
+        <ListView Name="LV_1" Grid.Row="2" Background="#FF61F00F" Margin="0,0,2,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Bedeutung A" Width="120" DisplayMemberBinding="{Binding Path=EnglishWord1}"/>
+                    <GridViewColumn Header="Bedeutung B" Width="120" DisplayMemberBinding="{Binding Path=EnglishWord2}"/>
+                    <GridViewColumn Header="Bedeutung C" Width="120" DisplayMemberBinding="{Binding Path=EnglishWord3}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DataGrid Name="DG_1" Grid.Column="1" Grid.Row="2" Background="#FF0F94F0" Margin="2,0,0,0"></DataGrid>
     </Grid>
 </Page>

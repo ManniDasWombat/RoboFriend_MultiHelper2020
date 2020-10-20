@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
         mc:Ignorable="d"
-        Title="RoboFriend-Multi-Helper-2020" Height="800" Width="800">
+              Height="800" Width="800" ResizeMode="CanResize"
+        Title="RoboFriend-Multi-Helper-2020" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="780"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="_Calculators">

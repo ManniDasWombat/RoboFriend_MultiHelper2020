@@ -20,11 +20,16 @@ namespace RoboFriend_MultiHelper2020
     /// </summary>
     public partial class Vocabulary_Master_01 : Page
     {
+
+        string NewEnglishVoc;
+        string NewGermanVoc;
+
         public Vocabulary_Master_01()
         {
             InitializeComponent();
             brush.ImageSource = new BitmapImage(new Uri(@".\Images\Vocabulary\E_To_D.png", UriKind.Relative));
             BT_Switch.Background = brush;
+
         }
 
         readonly ImageBrush brush = new ImageBrush();
@@ -44,6 +49,37 @@ namespace RoboFriend_MultiHelper2020
                 BT_Switch.Background = brush;
                 ModuloSwitchButton++;
             }
+        }
+
+        private void BTN_Start_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BTN_Add_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_E.Text != string.Empty && TB_D.Text != string.Empty)
+            {
+                var FollowUpQuestion = MessageBox.Show("Die Vokabel wirklich zur Liste hinzufügen?", "Bitte um Bestätigung", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (FollowUpQuestion == MessageBoxResult.Yes)
+                {
+                    NewEnglishVoc = TB_E.Text;
+                    NewGermanVoc = TB_D.Text;
+
+                    TB_E.Text = string.Empty;
+                    TB_D.Text = string.Empty;
+                }
+                else if (FollowUpQuestion == MessageBoxResult.No)
+                {
+                    TB_E.Text = string.Empty;
+                    TB_D.Text = string.Empty;
+                }
+            }
+        }
+
+        private void BTN_Remove_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

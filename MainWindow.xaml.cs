@@ -29,47 +29,65 @@ namespace RoboFriend_MultiHelper2020
 
         private void BestBuddy_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new BestMathBuddy_01();
         }
 
         private void EX_NR1_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new ElectronicXAMuLator_01();
         }
 
         private void BWL_SPC_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new SalesPriceCaclculator_01();
         }
 
 
         private void Listaholic_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new Listaholic_01();
         }
 
         private void TPS_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new ThePossessedStoreman_01();
         }
 
         private void ListFan_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new ListFanatic01();
         }
 
         private void TRP_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new TheRestlessPrepper_01();
         }
 
         private void GamesCollection_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 600;
+            Application.Current.MainWindow.Width = 600;
             StoreWindow.Content = new GamesCollection_01();
         }
 
         private void VocMaster_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Height = 500;
+            Application.Current.MainWindow.Width = 1200;
             StoreWindow.Content = new Vocabulary_Master_01();
         }
     }
