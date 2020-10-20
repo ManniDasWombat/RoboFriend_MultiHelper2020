@@ -23,7 +23,9 @@ namespace RoboFriend_MultiHelper2020
             InitializeComponent();
         }
 
-
+        int IDtoCompare;
+        List<EnglishWords> NewList_English = new List<EnglishWords>();
+        List<GermanWords> NewList_German = new List<GermanWords>();
 
 
         private void TB_00_KeyDown(object sender, KeyEventArgs e)
@@ -31,9 +33,19 @@ namespace RoboFriend_MultiHelper2020
 
         }
 
-        private void TB_01_KeyDown(object sender, KeyEventArgs e)
+        private void TB_01_KeyDown(object sender, KeyEventArgs e) // Vergleichsbox Deutsche Übersetzung Vokabeleingabe
         {
-
+            if (e.Key == Key.Return)
+            {
+                if (TB_01.Text == NewList_German[IDtoCompare].GermanWord1 || TB_01.Text == NewList_German[IDtoCompare].GermanWord2 || TB_01.Text == NewList_German[IDtoCompare].GermanWord3)
+                {
+                    TB_01.Background = System.Windows.Media.Brushes.GreenYellow;
+                }
+                else
+                {
+                    TB_01.Background = System.Windows.Media.Brushes.Red;
+                }
+            }
         }
 
         private void TB_10_KeyDown(object sender, KeyEventArgs e)
@@ -49,20 +61,13 @@ namespace RoboFriend_MultiHelper2020
 
 
 
-        private void BT_01_Click(object sender, RoutedEventArgs e) //Laden Buttton
+        private void BT_01_Click(object sender, RoutedEventArgs e) //Liste erzeugen Buttton
         {
-            List<EnglishWords> NewList_English = ListFanatic02.ListFanRobo_M_EW();
+            NewList_English = ListFanatic02.ListFanRobo_M_EW();
             LV_1.ItemsSource = NewList_English;
 
-            List<GermanWords> NewList_German = ListFanatic02.ListFanRobo_M_GW();
+            NewList_German = ListFanatic02.ListFanRobo_M_GW();
             DG_1.ItemsSource = NewList_German;
-
-
-            Vocabulary NewObjectNeededForDiceRobotPickerMethod = new Vocabulary();
-            EnglishWords CurrentRiddleWord = NewObjectNeededForDiceRobotPickerMethod.DiceRobotPicker(NewList_English);
-
-            TB_00.Text = CurrentRiddleWord.EnglishWord1;
-            TB_10.Text = "Hilfe: " + CurrentRiddleWord.EnglishWord2;
 
         }
 
@@ -70,11 +75,29 @@ namespace RoboFriend_MultiHelper2020
         {
             DG_1.Columns.Clear();
             LV_1.ItemsSource = string.Empty;
+
+            var converter = new System.Windows.Media.BrushConverter();
+            var brush = (Brush)converter.ConvertFromString("#FF05C9F5");
+            TB_01.Background = brush;
         }
 
-       private void BT_10_Click(object sender, RoutedEventArgs e) //anzeigen Button
+        private void BT_10_Click(object sender, RoutedEventArgs e) //Vokabel wählen Button
         {
+            Vocabulary NewObjectNeededForDiceRobotPickerMethod = new Vocabulary();
+            EnglishWords CurrentRiddleWord = NewObjectNeededForDiceRobotPickerMethod.DiceRobotPicker(NewList_English);
+
+            TB_00.Text = CurrentRiddleWord.EnglishWord1;
+            TB_10.Text = "Hilfe: " + CurrentRiddleWord.EnglishWord2;
+
+            IDtoCompare = CurrentRiddleWord.Voc_ID;
+            MessageBox.Show($"{IDtoCompare}");
 
         }
-    }
+        private void BT_00_Click(object sender, RoutedEventArgs e) //speichern button
+        {              
+        }
+    }  
 }
+
+
+
