@@ -36,8 +36,8 @@ namespace RoboFriend_MultiHelper2020
 
         private void EX_NR1_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Height = 800;
-            Application.Current.MainWindow.Width = 800;
+            Application.Current.MainWindow.Height = 700;
+            Application.Current.MainWindow.Width = 700;
             StoreWindow.Content = new ElectronicXAMuLator_01();
         }
 
@@ -89,6 +89,13 @@ namespace RoboFriend_MultiHelper2020
             Application.Current.MainWindow.Height = 500;
             Application.Current.MainWindow.Width = 1200;
             StoreWindow.Content = new Vocabulary_Master_01();
+        }
+
+        private void RGA_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Height = 800;
+            Application.Current.MainWindow.Width = 800;
+            StoreWindow.Content = new GamblingAddictsNotes();
         }
     }
 }

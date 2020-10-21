@@ -22,5 +22,11 @@ namespace RoboFriend_MultiHelper2020
         {
             InitializeComponent();
         }
+
+        private void Fibot_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Height = 900;
+            CalcStoreWindow.Content = new Fibot();
+        }
     }
 }

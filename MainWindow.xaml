@@ -25,6 +25,7 @@
                 <MenuItem Name="TPS" Header="_RoboThePossessedStoreman" Click="TPS_Click" />
                 <MenuItem Name="ListFan" Header="_RoboTheListFanatic" Click="ListFan_Click" />
                 <MenuItem Name="TRP" Header="_RoboTheRestlessPrepper" Click="TRP_Click" />
+                <MenuItem Name="RGA" Header="_GamblingAddictsNotes" Click="RGA_Click" />
             </MenuItem>
             <Separator />
             <MenuItem Name="GamesCollection" Header="_GamesCollection" Click="GamesCollection_Click"/>
