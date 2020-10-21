@@ -23,6 +23,12 @@
     <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\14.jpg" />
     <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\15.jpg" />
     <None Remove="FreeGames\Images\ButtonPuzzle_Level_01\16.jpg" />
+    <None Remove="Images\DicesImages\Würfel sw 1-000017270.jpg" />
+    <None Remove="Images\DicesImages\Würfel sw 2-000017271.jpg" />
+    <None Remove="Images\DicesImages\Würfel sw 3-000017272.jpg" />
+    <None Remove="Images\DicesImages\Würfel sw 4-000017273.jpg" />
+    <None Remove="Images\DicesImages\Würfel sw 5-000017274.jpg" />
+    <None Remove="Images\DicesImages\Würfel sw 6-000017275.jpg" />
   </ItemGroup>
   
   <ItemGroup>
@@ -77,6 +83,24 @@
     <Resource Include="Images\startimage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <EmbeddedResource Include="Images\DicesImages\Würfel sw 1-000017270.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\DicesImages\Würfel sw 2-000017271.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\DicesImages\Würfel sw 3-000017272.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\DicesImages\Würfel sw 4-000017273.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\DicesImages\Würfel sw 5-000017274.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\DicesImages\Würfel sw 6-000017275.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\Vocabulary\D_To_E.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

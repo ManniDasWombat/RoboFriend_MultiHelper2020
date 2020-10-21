@@ -148,5 +148,10 @@ namespace RoboFriend_MultiHelper2020
             DiceBulletin.Visibility = Visibility.Visible;
             DiceBulletin.ItemsSource = DiceDataList;
         }
+
+        private void RollDiceButton_Click(object sender, RoutedEventArgs e)
+        {
+            DiceImage.Source = new BitmapImage(new Uri(@".\Images\DicesImages\Würfel sw 1-000017270.jpg", UriKind.Relative));
+        }
     }
 }
