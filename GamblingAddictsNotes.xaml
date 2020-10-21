@@ -24,6 +24,8 @@
         <TextBlock Name="TextBlock_01" Grid.Row="2" Text="" TextWrapping="Wrap" Visibility="Collapsed"/>
         <Button Name="ResultButton" Content="Ergebnisse anzeigen" Grid.Row="3" Background="Aqua" Click="ResultButton_Click"/>
         <Button Name="RollDiceButton" Content="P L A Y" Grid.Column="1" Grid.Row="3" Background="#FF56A7EE" Foreground="White" FontWeight="ExtraBold" FontSize="20" Click="RollDiceButton_Click"/>
-        <Image Name="DiceImage" Grid.Column="1" Grid.Row="2" Source=""></Image>
+        <Image Name="DiceImage" Grid.Column="1" Grid.Row="2" Panel.ZIndex="2"></Image>
+        <ProgressBar Name="PR_Bar" Grid.Column="1" Grid.Row="1" Background="#FF56A7EE" Minimum="0" Maximum="100" Value="0" Foreground="Yellow"/>
+        <Label Name="LB_Number" Content="" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
     </Grid>
 </Page>

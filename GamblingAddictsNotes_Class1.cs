@@ -18,7 +18,7 @@ namespace RoboFriend_MultiHelper2020
 
     class DiceMan
     {
-        Random DiceRobot = new Random();
+        Random DiceRobot = new Random(); 
 
         public int CreateThrowDiceResult()
         {

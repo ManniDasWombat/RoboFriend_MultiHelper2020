@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace RoboFriend_MultiHelper2020
 {
@@ -23,11 +24,50 @@ namespace RoboFriend_MultiHelper2020
         List<DiceData> DiceDataList = new List<DiceData>(); 
         List<int> DiceRolls_NumberAndResults = new List<int>();
         int Counter;
-
+        Random DiceRobotX = new Random();
+        public DispatcherTimer StopWatchX = new DispatcherTimer();
+        int ThrownR;
 
         public GamblingAddictsNotes()
         {
             InitializeComponent();
+            StopWatchX.Tick += new EventHandler(StopWatchX_StartEvent);
+            StopWatchX.Interval = TimeSpan.FromMilliseconds(77);
+        }
+
+        public void StopWatchX_StartEvent(object sender, EventArgs e)
+        {
+            ThrownR = DiceRobotX.Next(1, 7);
+            switch (ThrownR)
+            {
+                case 1:
+                    DiceImage.Source = new BitmapImage(new Uri(@"./Images/DicesImages/1.jpg", UriKind.Relative));
+                    break;
+                case 2:
+                    DiceImage.Source = new BitmapImage(new Uri(@"./Images/DicesImages/2.jpg", UriKind.Relative));
+                    break;
+                case 3:
+                    DiceImage.Source = new BitmapImage(new Uri(@"./Images/DicesImages/3.jpg", UriKind.Relative));
+                    break;
+                case 4:
+                    DiceImage.Source = new BitmapImage(new Uri(@"./Images/DicesImages/4.jpg", UriKind.Relative));
+                    break;
+                case 5:
+                    DiceImage.Source = new BitmapImage(new Uri(@"./Images/DicesImages/5.jpg", UriKind.Relative));
+                    break;
+                case 6:
+                    DiceImage.Source = new BitmapImage(new Uri(@"./Images/DicesImages/6.jpg", UriKind.Relative));
+                    break;
+                default:
+                    MessageBox.Show($"An unexpected value ({ThrownR}) has been rolled, how is it possible?!");
+                    break;                 
+            }
+            LB_Number.Content = ThrownR;
+            PR_Bar.Value++;
+            if (PR_Bar.Value == 100)
+            {
+                PR_Bar.Value = 0;
+            }
         }
 
         private void TB_1_KeyDown(object sender, KeyEventArgs e)
@@ -151,7 +191,16 @@ namespace RoboFriend_MultiHelper2020
 
         private void RollDiceButton_Click(object sender, RoutedEventArgs e)
         {
-            DiceImage.Source = new BitmapImage(new Uri(@".\Images\DicesImages\Würfel sw 1-000017270.jpg", UriKind.Relative));
+            if (!StopWatchX.IsEnabled)
+            {
+                RollDiceButton.Content = "S T O P";
+                StopWatchX.Start();
+            }
+            else if (StopWatchX.IsEnabled)
+            {    
+                RollDiceButton.Content = "P L A Y";
+                StopWatchX.Stop();
+            }
         }
-    }
+    } 
 }
