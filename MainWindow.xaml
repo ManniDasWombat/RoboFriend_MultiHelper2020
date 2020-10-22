@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="_Calculators">
-                <MenuItem Name="BestBuddy" Header="_BestMathBuddy" Click="BestBuddy_Click"/>
-                <MenuItem Name="EC_NR1" Header="_ElectronicXAMuLator NR.1" Click="EX_NR1_Click"/>
+                <MenuItem Name="Fibot" Header="_Fibot" Click="BestBuddy_Click"/>
+                <MenuItem Name="EC_NR1" Header="_(free) ElectronicXAMuLator NR.2" Click="EX_NR1_Click"/>
                 <MenuItem Name="BWL_SPC" Header="_BWL SalesPriceCaclculator 1.0" Click="BWL_SPC_Click"/>
             </MenuItem>
             <Separator />

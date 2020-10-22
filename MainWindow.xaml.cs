@@ -29,16 +29,17 @@ namespace RoboFriend_MultiHelper2020
 
         private void BestBuddy_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Height = 800;
-            Application.Current.MainWindow.Width = 800;
-            StoreWindow.Content = new BestMathBuddy_01();
+            Application.Current.MainWindow.Height = 900;
+            Application.Current.MainWindow.Width = 700;
+            StoreWindow.Content = new Fibot();
         }
 
         private void EX_NR1_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Height = 700;
-            Application.Current.MainWindow.Width = 700;
-            StoreWindow.Content = new ElectronicXAMuLator_01();
+
+
+
+
         }
 
         private void BWL_SPC_Click(object sender, RoutedEventArgs e)
