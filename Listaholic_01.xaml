@@ -5,10 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1200"
       Title="Listaholic_01">
 
     <Grid>
-        
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE51AF9" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Label Content="Membership" Canvas.Left="181" Canvas.Top="53" Height="79" Width="473" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="White" FontFamily="Segoe UI Historic"/>
+            <PasswordBox x:Name="PB_password" Canvas.Left="258" Canvas.Top="225" Width="319" Height="43" KeyDown="Input_KeyDown" FontSize="18" />
+            <TextBox x:Name="TB_username" Height="43" Canvas.Left="258" Canvas.Top="152" Text="" TextWrapping="Wrap" Width="319" KeyDown="Input_KeyDown" FontSize="18"/>
+            <Label Content="Username" Canvas.Left="162" Canvas.Top="156" Width="91" Foreground="White" FontSize="16" FontFamily="Segoe UI Historic"/>
+            <Label Content="Password" Canvas.Left="162" Canvas.Top="225" Width="91" Foreground="White" FontSize="16" FontFamily="Segoe UI Historic"/>
+            <Button x:Name="B_signin" Content="Sign In" Canvas.Left="162" Canvas.Top="321" Height="95" Width="240" Background="White" IsEnabled="False" FontSize="48"/>
+            <Button x:Name="B_register" Content="Sign Up" Canvas.Left="402" Canvas.Top="321" Height="95" Width="240" Background="White" FontSize="48"/>
+            <Label x:Name="LB_registeredusers" Content="" Canvas.Left="282" Canvas.Top="432" Width="323" Foreground="White" FontSize="24"/>
+
+            <GroupBox Header="Nutzerdaten auslesen" Height="334" Canvas.Left="685" Canvas.Top="119" Width="450" Foreground="White">
+                <TextBlock x:Name="TB_Dataprint" Canvas.Left="814" Canvas.Top="152" Text="" TextWrapping="Wrap" FontSize="14"/>
+            </GroupBox>
+            <Button x:Name="BT_Show" Content="Show User Data" Canvas.Left="794" Canvas.Top="76" Height="32" Width="116" Background="White" />
+            <Button x:Name="BT_Delete" Content="Delete All Data" Canvas.Left="910" Canvas.Top="76" Height="32" Width="116" Background="White" />
+        </Canvas>
+
     </Grid>
 </Page>
