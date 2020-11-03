@@ -7,7 +7,24 @@
         mc:Ignorable="d"
         Title="Asteroid" Height="800" Width="800">
     <Grid>
-        <Canvas x:Name="OuterSpace">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="Gainsboro" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BT_Start" Content="Start" Grid.Column="1" Background="Transparent" Click="BT_Start_Click" />
+        <Canvas x:Name="OuterSpace" Grid.Row="1" Grid.Column="1">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

@@ -17,9 +17,19 @@ namespace RoboFriend_MultiHelper2020.FreeGames
     /// </summary>
     public partial class Asteroid : Window
     {
-        public Asteroid()
+        public Asteroid()               // Die xaml Objekte werden hier erst aufgebaut, erst sobald diese Methode abgeschlossen ist, kann auf alle Eigenschaften der XAML Steuerelemente zugegeriffen werden, darum der Start button nötig als zweiter Schritt
         {
-            InitializeComponent();
+            InitializeComponent();          
+        }
+
+        private void BT_Start_Click(object sender, RoutedEventArgs e)
+        {
+            Meteor TestFelsen = new Meteor();
+            TestFelsen.Object_Create(OuterSpace);
+            TestFelsen.Object_Draw(OuterSpace);
+            SpaceShip Babylon4 = new SpaceShip();
+            Babylon4.Object_Create(OuterSpace);
+            Babylon4.Object_Draw(OuterSpace);
         }
     }
 }
