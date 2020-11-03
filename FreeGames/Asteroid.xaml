@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoboFriend_MultiHelper2020.FreeGames"
         mc:Ignorable="d"
-        Title="Asteroid" Height="450" Width="800">
+        Title="Asteroid" Height="800" Width="800">
     <Grid>
-        
+        <Canvas x:Name="OuterSpace">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF1978EA" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
     </Grid>
 </Window>

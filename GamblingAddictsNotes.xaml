@@ -25,7 +25,16 @@
         <Button Name="ResultButton" Content="Ergebnisse anzeigen" Grid.Row="3" Background="Aqua" Click="ResultButton_Click"/>
         <Button Name="RollDiceButton" Content="P L A Y" Grid.Column="1" Grid.Row="3" Background="#FF56A7EE" Foreground="White" FontWeight="ExtraBold" FontSize="20" Click="RollDiceButton_Click"/>
         <Image Name="DiceImage" Grid.Column="1" Grid.Row="2" Panel.ZIndex="2"></Image>
-        <ProgressBar Name="PR_Bar" Grid.Column="1" Grid.Row="1" Background="#FF56A7EE" Minimum="0" Maximum="100" Value="0" Foreground="Yellow"/>
-        <Label Name="LB_Number" Content="" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
+        <ProgressBar Name="PR_Bar" Grid.Column="1" Grid.RowSpan="2" Background="#FF56A7EE" Minimum="0" Maximum="100" Value="0" Foreground="Yellow"/>
+        <WrapPanel Name="WP0001" Grid.Column="1" Grid.RowSpan="2" Background="Transparent" HorizontalAlignment="Center">
+            <Label Name="LB_Number1" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number2" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number3" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number4" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number5" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number6" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number7" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+            <Label Name="LB_Number8" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Background="Transparent"/>
+        </WrapPanel>
     </Grid>
 </Page>

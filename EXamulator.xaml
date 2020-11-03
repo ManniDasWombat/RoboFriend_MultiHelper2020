@@ -27,8 +27,10 @@
 
         <StackPanel Name="LP_DezBin" Grid.Row="0" Grid.Column="0">
             <Label Content="Dezimal-Binär Rechner" HorizontalAlignment="Left" Foreground="White" FontSize="22"/>
-            <TextBox Name="TB_001" Text="Hier bitte Zahl eingeben..." Background="Transparent" Foreground="#FF19E0F3" FontSize="22" GotFocus="TB_001_GotFocus"/>
-            <TextBlock Name="TBlock_001" Text="" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBox Name="TB_001" Text="Hier bitte DezimalZahl eingeben..." Background="Transparent" Foreground="#FF19E0F3" FontSize="22" GotFocus="TB_001_GotFocus" KeyDown="TB_001_KeyDown"/>
+            <TextBox Name="TB_002" Text="Hier bitte BinärZahl eingeben..." Background="Transparent" Foreground="#FF19E0F3" FontSize="22" GotFocus="TB_001_GotFocus" KeyDown="TB_002_KeyDown" />
+            <TextBlock Name="TBlock_001" Text="Methode1: " TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBlock Name="TBlock_002" Text="Methode2: " TextWrapping="Wrap" Foreground="#FF19E0F3" FontSize="16"/>
         </StackPanel>
     </Grid>
 </Page>

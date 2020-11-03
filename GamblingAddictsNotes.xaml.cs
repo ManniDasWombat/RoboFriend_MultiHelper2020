@@ -28,11 +28,22 @@ namespace RoboFriend_MultiHelper2020
         public DispatcherTimer StopWatchX = new DispatcherTimer();
         int ThrownR;
 
+        List<Label> LBS_DiceResults = new List<Label>();
+        int I = 0;
+
         public GamblingAddictsNotes()
         {
             InitializeComponent();
             StopWatchX.Tick += new EventHandler(StopWatchX_StartEvent);
             StopWatchX.Interval = TimeSpan.FromMilliseconds(77);
+            LBS_DiceResults.Add(LB_Number1);
+            LBS_DiceResults.Add(LB_Number2);
+            LBS_DiceResults.Add(LB_Number3);
+            LBS_DiceResults.Add(LB_Number4);
+            LBS_DiceResults.Add(LB_Number5);
+            LBS_DiceResults.Add(LB_Number6);
+            LBS_DiceResults.Add(LB_Number7);
+            LBS_DiceResults.Add(LB_Number8);
         }
 
         public void StopWatchX_StartEvent(object sender, EventArgs e)
@@ -62,8 +73,16 @@ namespace RoboFriend_MultiHelper2020
                     MessageBox.Show($"An unexpected value ({ThrownR}) has been rolled, how is it possible?!");
                     break;                 
             }
-            LB_Number.Content = ThrownR;
-            PR_Bar.Value++;
+
+            LBS_DiceResults[I].Content = ThrownR;
+            I++;
+            if (I == 7)
+            {
+                I = 0;
+            }
+
+
+            PR_Bar.Value += 10;
             if (PR_Bar.Value == 100)
             {
                 PR_Bar.Value = 0;
