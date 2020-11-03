@@ -36,10 +36,9 @@ namespace RoboFriend_MultiHelper2020
 
         private void EX_NR1_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-
+            Application.Current.MainWindow.Height = 1200;
+            Application.Current.MainWindow.Width = 800;
+            StoreWindow.Content = new EXamulator();
         }
 
         private void BWL_SPC_Click(object sender, RoutedEventArgs e)

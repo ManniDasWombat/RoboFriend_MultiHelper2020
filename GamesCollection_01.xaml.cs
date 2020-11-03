@@ -24,6 +24,8 @@ namespace RoboFriend_MultiHelper2020
             InitializeComponent();
             Button1.Content = "GöttisheimER\nThe Puzzle";
             Button2.Content = "Funfair Shooter";
+            Button3.Content = "Game Of Life";
+            Button4.Content = "Asteroid";
         }
 
         private void Button1_Click(object sender, RoutedEventArgs e)
@@ -36,6 +38,18 @@ namespace RoboFriend_MultiHelper2020
         {
             FunfairShooter FunFairShoot = new FunfairShooter();
             FunFairShoot.Show();
+        }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            GameOfLife SimpleLife = new GameOfLife();
+            SimpleLife.Show();
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            Asteroid AsteroidGame = new Asteroid();
+            AsteroidGame.Show();
         }
     }
 }

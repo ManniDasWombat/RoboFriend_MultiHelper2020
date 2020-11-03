@@ -1,0 +1,34 @@
+﻿<Page x:Class="RoboFriend_MultiHelper2020.EXamulator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="EXamulator">
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="Yellow" Offset="0.735"/>
+            <GradientStop Color="Yellow" Offset="0.557"/>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Name="LP_DezBin" Grid.Row="0" Grid.Column="0">
+            <Label Content="Dezimal-Binär Rechner" HorizontalAlignment="Left" Foreground="White" FontSize="22"/>
+            <TextBox Name="TB_001" Text="Hier bitte Zahl eingeben..." Background="Transparent" Foreground="#FF19E0F3" FontSize="22" GotFocus="TB_001_GotFocus"/>
+            <TextBlock Name="TBlock_001" Text="" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+</Page>
