@@ -51,8 +51,8 @@ namespace RoboFriend_MultiHelper2020
 
         private void Listaholic_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Height = 800;
-            Application.Current.MainWindow.Width = 800;
+            Application.Current.MainWindow.Height = 600;
+            Application.Current.MainWindow.Width = 1100;
             StoreWindow.Content = new Listaholic_01();
         }
 
@@ -73,7 +73,7 @@ namespace RoboFriend_MultiHelper2020
         private void TRP_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Height = 800;
-            Application.Current.MainWindow.Width = 800;
+            Application.Current.MainWindow.Width = 1000;
             StoreWindow.Content = new TheRestlessPrepper_01();
         }
 

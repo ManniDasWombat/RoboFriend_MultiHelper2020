@@ -5,22 +5,49 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1000"
       Title="Robo_TheRestlessPrepper_01">
-    <Grid Background="#FFE8F127">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Name="TB_TESTBLOCK" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="" TextWrapping="Wrap" Background="#FF03F9D8" FontSize="16"/>
-            <TextBox Name="TB_Attribut1" Grid.Column="0" Grid.Row="0" Text="" TextWrapping="Wrap"/>
-            <TextBox Name="TB_Attribut2" Grid.Column="1" Grid.Row="0" Text="" TextWrapping="Wrap"/>
-        <Button Name="TB_TESTBUTTON" Grid.Column="0" Grid.Row="2" Content="Test" Click="TESTBUTTON_Click" Height="50" Grid.RowSpan="2" VerticalAlignment="Top"/>
-        <Button Name="TB_TESTBUTTON2" Grid.Column="1" Grid.Row="2" Content="Test2" Click="TESTBUTTON2_Click" Height="50" Grid.RowSpan="2" VerticalAlignment="Top"/>
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFFFA200"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="BT_1_Load" Content="Laden" Grid.Column="1" Grid.Row="3" Background="Transparent" Foreground="White" FontSize="30" Click="BT_1_Load_Click" />
+        <Button Name="BT_2_Save" Content="Speichern" Grid.Column="1" Grid.Row="4" Background="Transparent" Foreground="White" FontSize="30" Click="BT_2_Save_Click" />
+        <Button Name="BT_3_Load" Content="Laden" Grid.Column="2" Grid.Row="3" Background="Transparent" Foreground="White" FontSize="30" Click="BT_3_Load_Click" />
+        <Button Name="BT_4_Save" Content="Speichern" Grid.Column="2" Grid.Row="4" Background="Transparent" Foreground="White" FontSize="30" Click="BT_4_Save_Click" />
+        <TextBox x:Name="TB_1" Text="" Grid.Column="1" Grid.Row="1" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TB_2" Text="" Grid.Column="2" Grid.Row="1" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyDown="TB_2_KeyDown"/>
+        <ProgressBar Name="PBar" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Minimum="0" Maximum="20" Value="0" Foreground="White"/>
+
+        <DataGrid x:Name="DataG_2" Grid.Row="2" Grid.Column="2" AutoGenerateColumns="False" Visibility="Hidden" FontSize="16" Background="Transparent" RowBackground="Transparent" AlternatingRowBackground="Transparent" Foreground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Key}" Header="Kennzeichen:" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Value}" Header="Stadt:" Width="2*"/>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
     </Grid>
 </Page>

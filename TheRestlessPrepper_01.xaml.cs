@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,44 +19,86 @@ namespace RoboFriend_MultiHelper2020
     /// </summary>
     public partial class TheRestlessPrepper_01 : Page
     {
+
+        Dictionary<string, string> Dict_Kennzeichen = new Dictionary<string, string>();
+        string StadtName;
+
         public TheRestlessPrepper_01()
         {
             InitializeComponent();
         }
 
-        //Klasse
-        class Auto
+        private void BT_1_Load_Click(object sender, RoutedEventArgs e)
         {
-            // Attribute
-            public string Hersteller;
-            public string Modell;
-
-            // Methoden
-            public string MethodeAusgabeWerte()
-            {
-                string back = $"Hersteller: {Hersteller}\nModell: {Modell}\n";
-                return back;
-            }
+            PBar.Value++;
         }
 
-        List<Auto> AutoListe = new List<Auto>();
-
-        public void TESTBUTTON_Click(object sender, RoutedEventArgs e)
+        private void BT_2_Save_Click(object sender, RoutedEventArgs e)
         {
-            Auto NewAuto = new Auto();
-            NewAuto.Hersteller = TB_Attribut1.Text;
-            NewAuto.Modell = TB_Attribut2.Text;
-            AutoListe.Add(NewAuto);
+            PBar.Value++;
         }
-        private void TESTBUTTON2_Click(object sender, RoutedEventArgs e)
+
+        private void BT_3_Load_Click(object sender, RoutedEventArgs e)         // csv Liste laden
         {
-            int Nummer = 0;
-            foreach (Auto item in AutoListe)
+            PBar.Value++;
+
+            string ProjektVerzeichnis = System.IO.Path.GetDirectoryName(        // Versuch um Problem mit relativem Pfad zu lösen funktioniert
+            System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string DateipfadRelativ = ProjektVerzeichnis + @"\kfz-kennzeichen-2020.csv";
+
+
+            // Datei einlesen und Schlüssel-Wert-Paare in Dictionary speichern
+            StreamReader StRd_X = new StreamReader(DateipfadRelativ, Encoding.UTF7);
+            while (!StRd_X.EndOfStream)                                                         
             {
-                TB_TESTBLOCK.Text += $"{AutoListe[Nummer].MethodeAusgabeWerte()}\n";
-                Nummer++;
+                string strLine = StRd_X.ReadLine();
+                string[] strTeile = strLine.Split(';');
+                string Kennzeichen = strTeile[0].Trim().ToUpper();
+                string Stadt = strTeile[1].Trim();
+                if (Kennzeichen.Length > 0)
+                {
+                    // Schlüssel-Wert-Paar zum Dictionary hinzufügen
+                    Dict_Kennzeichen.Add(Kennzeichen, Stadt);
+                }
             }
-            TB_TESTBLOCK.Text += $"\n Anzahl Autos in AutoListe: {AutoListe.Count}";
+            DataG_2.Visibility = Visibility.Visible;
+            DataG_2.ItemsSource = Dict_Kennzeichen;
+            DataG_2.Items.Refresh();
+
+        }
+
+        private void BT_4_Save_Click(object sender, RoutedEventArgs e)
+        {
+            PBar.Value++;
+        }
+
+        private void TB_2_KeyDown(object sender, KeyEventArgs e)        // prüfen ob Key/=Kennzeichen in Liste ist und dann zugehörigen Value/=Stadt ausgeben
+        {
+            if (e.Key == Key.Return)
+            {
+                PBar.Value++;
+
+                if (Dict_Kennzeichen.TryGetValue(TB_2.Text, out StadtName))     // Lösung 1
+                {
+                    PBar.Value++;
+
+                    MessageBox.Show($"Das Kennzeichen existiert. Die Stadt heißt: {StadtName}");
+                }
+                else
+                {
+                    MessageBox.Show($"Das Kennzeichen existiert nicht.");
+                }
+
+                /*
+                if (Dict_Kennzeichen.ContainsKey(TB_2.Text))            // Lösung 2 (Bube)
+                {
+                    PBar.Value++;
+
+                    MessageBox.Show(Dict_Kennzeichen[TB_2.Text]);                  
+                }
+                */
+            }
+
 
         }
     }

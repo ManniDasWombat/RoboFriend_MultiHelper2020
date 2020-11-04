@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1200"
+      d:DesignHeight="600" d:DesignWidth="1100"
       Title="Listaholic_01">
 
     <Grid>
@@ -16,20 +16,29 @@
                     <GradientStop Color="#FFE51AF9" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <Label Content="Membership" Canvas.Left="181" Canvas.Top="53" Height="79" Width="473" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="White" FontFamily="Segoe UI Historic"/>
-            <PasswordBox x:Name="PB_password" Canvas.Left="258" Canvas.Top="225" Width="319" Height="43" FontSize="18" />
-            <TextBox x:Name="TB_username" Height="43" Canvas.Left="258" Canvas.Top="152" Text="" TextWrapping="Wrap" Width="319" FontSize="18"/>
-            <Label Content="Username" Canvas.Left="162" Canvas.Top="156" Width="91" Foreground="White" FontSize="16" FontFamily="Segoe UI Historic"/>
-            <Label Content="Password" Canvas.Left="162" Canvas.Top="225" Width="91" Foreground="White" FontSize="16" FontFamily="Segoe UI Historic"/>
-            <Button x:Name="B_signin" Content="Sign In" Canvas.Left="162" Canvas.Top="321" Height="95" Width="240" Background="White" IsEnabled="False" FontSize="48"/>
-            <Button x:Name="B_register" Content="Sign Up" Canvas.Left="402" Canvas.Top="321" Height="95" Width="240" Background="White" FontSize="48"/>
-            <Label x:Name="LB_registeredusers" Content="" Canvas.Left="282" Canvas.Top="432" Width="323" Foreground="White" FontSize="24"/>
+            <Label Content="Membership" Canvas.Left="59" Canvas.Top="53" Height="79" Width="458" FontSize="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="White" FontFamily="Segoe UI"/>
+            <PasswordBox x:Name="PB_password" Canvas.Left="152" Canvas.Top="243" Width="309" Height="43" FontSize="18" VerticalContentAlignment="Center" />
+            <TextBox x:Name="TB_username" Height="43" Canvas.Left="152" Canvas.Top="170" Text="" TextWrapping="Wrap" Width="309" FontSize="18" VerticalContentAlignment="Center" />
+            <Label Content="Username" Canvas.Left="59" Canvas.Top="174" Width="88" Foreground="White" FontSize="16" FontFamily="Segoe UI Historic"/>
+            <Label Content="Password" Canvas.Left="59" Canvas.Top="243" Width="88" Foreground="White" FontSize="16" FontFamily="Segoe UI Historic"/>
+            <Button x:Name="B_signin" Content="Sign In" Canvas.Left="45" Canvas.Top="330" Height="95" Width="232" Background="White" IsEnabled="False" FontSize="48"/>
+            <Button x:Name="B_register" Content="Sign Up" Canvas.Left="277" Canvas.Top="330" Height="95" Width="233" Background="White" FontSize="48" Click="B_register_Click"/>
+            <Label x:Name="LB_registeredusers" Content="" Canvas.Left="550" Canvas.Top="490" Width="465" Foreground="White" FontSize="24" HorizontalContentAlignment="Center"/>
 
-            <GroupBox Header="Nutzerdaten auslesen" Height="334" Canvas.Left="685" Canvas.Top="119" Width="450" Foreground="White">
-                <TextBlock x:Name="TB_Dataprint" Canvas.Left="814" Canvas.Top="152" Text="" TextWrapping="Wrap" FontSize="14"/>
+            <GroupBox Header="Nutzerdaten auslesen" Height="334" Canvas.Left="550" Canvas.Top="156" Width="465" Foreground="White">
+                <DataGrid x:Name="UserDataGrid_1" Background="Transparent" RowBackground="Aqua" AlternatingRowBackground="Snow">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ID}" Header="Listennummer" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="User Name" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Pwd}" Header="Password" Width="100"/>
+                        <DataGridCheckBoxColumn Binding="{Binding Mail_Verification}" Header="Email bestätigt?" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </GroupBox>
-            <Button x:Name="BT_Show" Content="Show User Data" Canvas.Left="794" Canvas.Top="76" Height="32" Width="116" Background="White" />
-            <Button x:Name="BT_Delete" Content="Delete All Data" Canvas.Left="910" Canvas.Top="76" Height="32" Width="116" Background="White" />
+            <Button x:Name="BT_Show" Content="Show user data" Canvas.Left="551" Canvas.Top="111" Height="32" Width="112" Background="White" Click="BT_Show_Click" />
+            <Button x:Name="BT_Delete" Content="Delete all data" Canvas.Left="663" Canvas.Top="111" Height="32" Width="112" Background="White" Click="BT_Delete_Click" />
+            <Button x:Name="BT_Load" Content="Load saved data" Canvas.Left="775" Canvas.Top="111" Height="32" Width="112" Background="White" />
+            <Button x:Name="BT_Save" Content="Save to txt file" Canvas.Left="887" Canvas.Top="111" Height="32" Width="128" Background="White" Click="BT_Save_Click" />
         </Canvas>
 
     </Grid>
