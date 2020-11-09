@@ -25,21 +25,19 @@ namespace RoboFriend_MultiHelper2020
         
         public Spieler.VereinEnum ZuteilungVerein()
         {
-            Spieler.VereinEnum XY_SV;
-            XY_SV = Spieler.VereinEnum.BVB;
-            switch (TestZahlGenerator.Next(0, 4))
+            switch (TestZahlGenerator.Next(1, 4))
             {
-                case 1: XY_SV = Spieler.VereinEnum.BVB; break;
-                case 2: XY_SV = Spieler.VereinEnum.Bayern; break;
-                case 3: XY_SV = Spieler.VereinEnum.FC_Schalke_04; break;
+                case 1: return Spieler.VereinEnum.BVB;
+                case 2: return Spieler.VereinEnum.Bayern;
+                case 3: return Spieler.VereinEnum.FC_Schalke_04;
+                default: return Spieler.VereinEnum.Kein_Verein;
             }
-            return XY_SV;
         }
     }
 
     class Spieler
     {
-        public enum VereinEnum { BVB, Bayern, FC_Schalke_04 }
+        public enum VereinEnum { BVB, Bayern, FC_Schalke_04, Kein_Verein }
 
 
         public int Spieler_ID { get; set; }
