@@ -19,6 +19,9 @@ namespace RoboFriend_MultiHelper2020
     /// </summary>
     public partial class TheRestlessPrepper_01 : Page
     {
+        List<Spieler> SpielerListeX = new List<Spieler>();
+
+
         Dictionary<string, string> Dict_Kennzeichen = new Dictionary<string, string>();
         string StadtName;
 
@@ -124,6 +127,7 @@ namespace RoboFriend_MultiHelper2020
         {
             if (e.Key == Key.Return)
             {
+
                 string DateiPfadUndNameX = @"Versuch.txt";
                 StreamWriter SW_X = new StreamWriter(DateiPfadUndNameX);
                 SW_X.WriteLine(TB_2.Text);                                // Datei wird erstellt, aber kein Inhalt
@@ -138,14 +142,26 @@ namespace RoboFriend_MultiHelper2020
         {
             PBar.Value++;
 
-            // TB_1.Text;
+            string Zufallsvorname;
+            string Zufallsnachname;
+            int Zufallszahl;
+
+            DiceManStuff ZufallsgenKlasse = new DiceManStuff();
+            Zufallszahl = ZufallsgenKlasse.TestZahlGenerator.Next(0, 30);
+            Zufallsvorname = ZufallsgenKlasse.ZufallszahlX(20);
+            Zufallsnachname = ZufallsgenKlasse.ZufallszahlX(10);
+            Spieler.VereinEnum Zufallsverein = ZufallsgenKlasse.ZuteilungVerein();
+
+            SpielerListeX.Add(new Spieler { Spieler_ID = SpielerListeX.Count + 1, Vorname = Zufallsvorname, Name = Zufallsnachname, Verein = ZufallsgenKlasse.ZuteilungVerein(), Geburtsjahr = 2020 - Zufallszahl, Alter = Zufallszahl });
+
+            DataG_1.Visibility = Visibility.Visible;
+            DataG_1.ItemsSource = SpielerListeX;
+            DataG_1.Items.Refresh();
         }
 
         private void BT_2_Save_Click(object sender, RoutedEventArgs e)
         {
             PBar.Value++;
-
-
         }
     }
 }

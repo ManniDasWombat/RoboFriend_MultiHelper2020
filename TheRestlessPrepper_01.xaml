@@ -50,11 +50,7 @@
             </DataGrid.Resources>
         </DataGrid>
 
-        <DataGrid x:Name="DataG_1" Grid.Row="2" Grid.Column="1" AutoGenerateColumns="False" Visibility="Hidden" FontSize="16" Background="Transparent" RowBackground="Transparent" AlternatingRowBackground="Transparent" Foreground="White">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Key}" Header="" Width="*" />
-                <DataGridTextColumn Binding="{Binding Value}" Header="" Width="*" />
-            </DataGrid.Columns>
+        <DataGrid x:Name="DataG_1" Grid.Row="2" Grid.Column="1" AutoGenerateColumns="True" Visibility="Hidden" FontSize="12" Background="Transparent" RowBackground="Transparent" AlternatingRowBackground="Transparent" Foreground="White" Width="Auto">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="White" />
