@@ -1,0 +1,62 @@
+﻿<Page x:Class="RoboFriend_MultiHelper2020.RetardedFileTwit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1400"
+      Title="RetardedFileTwit">
+
+    <Grid Background="DeepSkyBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="12*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+            
+            <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Name="OpenFile" Content="Open File" VerticalAlignment="Top" Background="YellowGreen"  Click="OpenFile_Click"/>
+            </Viewbox>
+            <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Name="CloseFile" Content="Close File" VerticalAlignment="Top" Background="Yellow" Click="CloseFile_Click"/>
+            </Viewbox>
+            <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Name="CopyFile" Content="Copy File" VerticalAlignment="Top" Background="DarkBlue" Foreground="WhiteSmoke" Click="CopyFile_Click"/>
+            </Viewbox>
+            <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Button Name="Direktkopie" Content="Auto Clone" VerticalAlignment="Top" Background="CornflowerBlue" Click="Direktkopie_Click"/>
+            </Viewbox>
+            <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Name="ShowFilePath" Content="Show Path" VerticalAlignment="Top" Background="Chocolate" Click="ShowFilePath_Click"/>
+            </Viewbox>
+            <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="120">
+                <Button Name="DelFile" Content="Delete Source File" VerticalAlignment="Top" Background="Red" Click="DelFile_Click"/>
+            </Viewbox>
+
+        </StackPanel>
+        <ScrollViewer Grid.Column="1" Grid.Row="2" Background="Transparent">
+        <TextBlock Name="TBlock_A" Text="" TextWrapping="Wrap" Background="Blue" Foreground="White"/>
+        </ScrollViewer>
+
+        <Viewbox Grid.Column="1" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Label Name="LB_Path" Content="" VerticalContentAlignment="Center"/>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBox Name="TB_Path" Text="" VerticalContentAlignment="Center" Background="Transparent"/>
+        </Viewbox>
+        <Viewbox Grid.Column="0" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Label Content="Source:" />
+        </Viewbox>
+        <Viewbox Grid.Column="0" Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Label Content="Destination:" />
+        </Viewbox>
+
+    </Grid>
+</Page>

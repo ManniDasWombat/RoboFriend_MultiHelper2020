@@ -97,5 +97,12 @@ namespace RoboFriend_MultiHelper2020
             Application.Current.MainWindow.Width = 800;
             StoreWindow.Content = new GamblingAddictsNotes();
         }
+
+        private void FileTwit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Height = 1000;
+            Application.Current.MainWindow.Width = 1400;
+            StoreWindow.Content = new RetardedFileTwit();
+        }
     }
 }
