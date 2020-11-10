@@ -23,21 +23,42 @@ namespace RoboFriend_MultiHelper2020.FreeGames
             InitializeComponent();          
         }
 
-        Meteor TestFelsen = new Meteor();
+        bool GameStart = false;
+        Meteor TestFelsen = new Meteor();           // dient momentan nur noch für die Menge der Felsen länge der for Schleife
         SpaceShip Babylon4 = new SpaceShip();
+
+        List<Meteor> MeteorSwarm = new List<Meteor>();
 
         private void BT_Start_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < length; i++)
+            if (!GameStart)
             {
+                GameStart = true;
 
+                Babylon4.Object_Create(OuterSpace);
+                Babylon4.Object_Draw(OuterSpace);
+
+                for (int i = 0; i < TestFelsen.Object_Amount; i++)
+                {
+                    // MessageBox.Show(TestFelsen.Object_Amount.ToString());        // Test MeteorAnzahl
+
+                    MeteorSwarm.Add(new Meteor());
+                }
+
+                foreach (Meteor item in MeteorSwarm)
+                {
+                    item.Object_Create(OuterSpace);
+                    item.Object_Draw(OuterSpace);
+                }
+
+                BT_Start.Content = "Restart";
             }
-            
-            TestFelsen.Object_Create(OuterSpace);
-            TestFelsen.Object_Draw(OuterSpace);
-            
-            Babylon4.Object_Create(OuterSpace);
-            Babylon4.Object_Draw(OuterSpace);
+            else if (GameStart)
+            {
+            }
+
+
+
         }
     }
 }

@@ -14,10 +14,10 @@ namespace RoboFriend_MultiHelper2020.FreeGames
     {
         public double Object_Position_X { get; set; }       // Die Kindelemente erben nur das leere Attribut (Wert=0) Object_Position_X mit Schreibrechten(wegen set;), aber was sie dann hineinschreiben, wird nicht aufs Elternelement/Basisklasse übertragen. Der Wert der Basisklasse bleibt immer so, wie hier festgelegt/bzw nicht festgelegt, also Null
         public double Object_Position_Y { get; set; }
-        public double Object_Speed_X;                       // Geschwindigkeit benötigt auch die Info, wohin denn bewegt wird, darum 2 Werte
-        public double Object_Speed_Y;
-        public double Object_Size;
-        public double Object_Amount;
+        public double Object_Speed_X   { get; set; }                    // Geschwindigkeit benötigt auch die Info, wohin denn bewegt wird, darum 2 Werte
+        public double Object_Speed_Y { get; set; }
+        public double Object_Size { get; set; }
+        public double Object_Amount { get; set; }
 
         static Random DiceMan = new Random();
 
@@ -36,6 +36,7 @@ namespace RoboFriend_MultiHelper2020.FreeGames
     // -----------------------------------------------> ASTEROID CHILD
     class Meteor : Asteroid_GameObjects
     {
+        public new double Object_Amount = 15;           // new ???
 
         public void Object_Create()         // hier muss Canvas im Parameter fehlen, sonst übernimmt er es nicht von der Basisklasse. Ebenso Virtual musste raus
         {
@@ -44,15 +45,13 @@ namespace RoboFriend_MultiHelper2020.FreeGames
         Ellipse ELPS = new Ellipse();       // statt " (); "  könnte  " {Width= , Height= , ... }; " stehen, aber dann müsste die Ellipse in die Methode rein
 
         public override void Object_Draw(Canvas BattleGround)
-        {
-                   
+        {               
             ELPS.Width = 20.0;
             ELPS.Height = 20.0;
             Canvas.SetLeft(ELPS, Object_Position_X);         // Besonderheit: Hier wird nicht die Instanz sondern die statische Methode der gesamten Klasse Canvas angesprochen
             Canvas.SetTop(ELPS, Object_Position_Y);
             ELPS.Fill = Brushes.Gray;
             BattleGround.Children.Add(ELPS);
-            Object_Amount = 15;
         }
     }
 
@@ -80,7 +79,7 @@ namespace RoboFriend_MultiHelper2020.FreeGames
     // -----------------------------------------------> WEAPON CHILD
     class Weapon_A1 : Asteroid_GameObjects
     {
-        public string Weapon_Name;
+        // public string Weapon_Name { get; set; }
     }
 
 }
