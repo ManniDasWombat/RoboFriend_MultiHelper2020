@@ -19,14 +19,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="TB_00" Text="TB_00: Please enter text..." TextWrapping="Wrap" Background="#FFAEFF00" Margin="0,0,2,2" KeyDown="TB_00_KeyDown"/>
-        <TextBox Name="TB_01" Text="TB_01: Please enter text..." TextWrapping="Wrap" Grid.Column="1" Background="#FF05C9F5" Margin="2,0,0,2" KeyDown="TB_01_KeyDown"/>
-        <TextBox Name="TB_10" Text="TB_10: Please enter text..." TextWrapping="Wrap" Grid.Row="1" Background="#FF48D605" Margin="0,2,2,0" KeyDown="TB_10_KeyDown"/>
-        <TextBox Name="TB_11" Text="TB_11: Please enter text..." TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Background="#FF08EBF5" Margin="2,2,0,0" KeyDown="TB_11_KeyDown"/>
-        <Button Name="BT_00" Content="BT_00" Grid.Row="3" Background="#FFFFDE0C" Margin="0,0,2,2" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_00_Click"/>
-        <Button Name="BT_10" Content="BT_10" Grid.Row="4" Background="#FFFFDE0C" Margin="0,2,2,0" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_10_Click"/>
-        <Button Name="BT_01" Content="BT_01" Grid.Row="3" Grid.Column="1" Background="#FFFFDE0C" Margin="2,0,0,2" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_01_Click"/>
-        <Button Name="BT_11" Content="BT_11" Grid.Row="4" Grid.Column="1" Background="#FFFFDE0C" Margin="2,2,0,0" BorderThickness="6" BorderBrush="#FFF5F505" Click="BT_11_Click"/>
+        <TextBox Name="TB_00" Text="TB_00: Please enter text..." TextWrapping="Wrap" Background="#FFAEFF00" Margin="0,0,2,2"/>
+        <TextBox Name="TB_01" Text="TB_01: Please enter text..." TextWrapping="Wrap" Grid.Column="1" Background="#FF05C9F5" Margin="2,0,0,2"/>
+        <TextBox Name="TB_10" Text="TB_10: Please enter text..." TextWrapping="Wrap" Grid.Row="1" Background="#FF48D605" Margin="0,2,2,0"/>
+        <TextBox Name="TB_11" Text="TB_11: Please enter text..." TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Background="#FF08EBF5" Margin="2,2,0,0"/>
+        <Button Name="BT_00" Content="BT_00" Grid.Row="3" Background="#FFFFDE0C" Margin="0,0,2,2" BorderThickness="6" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_10" Content="BT_10" Grid.Row="4" Background="#FFFFDE0C" Margin="0,2,2,0" BorderThickness="6" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_01" Content="BT_01" Grid.Row="3" Grid.Column="1" Background="#FFFFDE0C" Margin="2,0,0,2" BorderThickness="6" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_11" Content="BT_11" Grid.Row="4" Grid.Column="1" Background="#FFFFDE0C" Margin="2,2,0,0" BorderThickness="6" BorderBrush="#FFF5F505"/>
         
         <DataGrid Name="DG_1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Background="#FF0F94F0"></DataGrid>
         
