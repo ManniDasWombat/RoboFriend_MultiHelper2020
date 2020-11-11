@@ -104,5 +104,12 @@ namespace RoboFriend_MultiHelper2020
             Application.Current.MainWindow.Width = 1400;
             StoreWindow.Content = new RetardedFileTwit();
         }
+
+        private void WW3_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Height = 900;
+            Application.Current.MainWindow.Width = 1200;
+            StoreWindow.Content = new WW3();
+        }
     }
 }

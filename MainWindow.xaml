@@ -22,12 +22,13 @@
             <MenuItem Header="_Warehouser">
                 <MenuItem Name="VocMaster" Header="_VocabularyMaster" Click="VocMaster_Click"/>
                 <MenuItem Name="Listaholic" Header="_Listaholic" Click="Listaholic_Click" />
-                <MenuItem Name="TPS" Header="_RoboThePossessedStoreman" Click="TPS_Click" />
+                <MenuItem Name="TPS" Header="_ThePossessedStoreman" Click="TPS_Click" />
                 <MenuItem Name="ListFan" Header="_RoboTheListFanatic" Click="ListFan_Click" />
                 <MenuItem Name="TRP" Header="_RoboTheRestlessPrepper" Click="TRP_Click" />
                 <MenuItem Name="RGA" Header="_GamblingAddictsNotes" Click="RGA_Click" />
                 <Separator />
                 <MenuItem Name="FileTwit" Header="_RetardedFileTwit" Click="FileTwit_Click" />
+                <MenuItem Name="WW3" Header="_WW3 - TheLonelySurvivalist" Click="WW3_Click"/>
             </MenuItem>
             <Separator />
             <MenuItem Name="GamesCollection" Header="_GamesCollection" Click="GamesCollection_Click"/>
