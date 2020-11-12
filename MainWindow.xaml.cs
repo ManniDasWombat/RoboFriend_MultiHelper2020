@@ -86,9 +86,9 @@ namespace RoboFriend_MultiHelper2020
 
         private void VocMaster_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Height = 500;
+            Application.Current.MainWindow.Height = 800;
             Application.Current.MainWindow.Width = 1200;
-            StoreWindow.Content = new Vocabulary_Master_01();
+            StoreWindow.Content = new Generalist();
         }
 
         private void RGA_Click(object sender, RoutedEventArgs e)

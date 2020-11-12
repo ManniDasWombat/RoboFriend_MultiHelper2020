@@ -20,7 +20,7 @@
             </MenuItem>
             <Separator />
             <MenuItem Header="_Warehouser">
-                <MenuItem Name="VocMaster" Header="_VocabularyMaster" Click="VocMaster_Click"/>
+                <MenuItem Name="Generalist" Header="_GeneraList" Click="VocMaster_Click"/>
                 <MenuItem Name="Listaholic" Header="_Listaholic" Click="Listaholic_Click" />
                 <MenuItem Name="TPS" Header="_ThePossessedStoreman" Click="TPS_Click" />
                 <MenuItem Name="ListFan" Header="_RoboTheListFanatic" Click="ListFan_Click" />
