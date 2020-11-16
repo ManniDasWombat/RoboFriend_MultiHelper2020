@@ -39,6 +39,20 @@
                 <DataGridTextColumn Binding="{Binding Verb}" Header="Verb" Width="*" MinWidth="40"/>
                 <DataGridTextColumn Binding="{Binding Noun}" Header="Noun" Width="*" MinWidth="40"/>
                 <DataGridTextColumn Binding="{Binding Adjective}" Header="Adjective" Width="*" MinWidth="40"/>
+
+                <DataGridTemplateColumn Header="Sprachen:">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ThisVocsLanguage}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding Path=Language}" SelectedItem="{Binding Path=ThisVocsLanguage}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
 

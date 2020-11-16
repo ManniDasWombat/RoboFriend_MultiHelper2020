@@ -12,9 +12,9 @@ namespace RoboFriend_MultiHelper2020
 
     public class Vocable
     {
-        public enum EnumLanguage { English, German }
+        public List<string> Language { get; set; }
+        public string ThisVocsLanguage { get; set; }
         public int VocID { get; set; }
-        public EnumLanguage VocLanguage { get; set; }
         public string Verb { get; set; }
         public string Noun { get; set; }
         public string Adjective { get; set; }

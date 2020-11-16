@@ -30,6 +30,11 @@ namespace RoboFriend_MultiHelper2020
         public List<Vocable> TestListe_1 = new List<Vocable>();
         public List<Vocable> TestListe_2 = new List<Vocable>();
 
+        public List<string> Sprachen = new List<string>
+        {
+            "English", "German"
+        };
+
         private void BT_1_3_Click(object sender, RoutedEventArgs e)         // Liste laden
         {
             FilePath = null;
@@ -54,11 +59,11 @@ namespace RoboFriend_MultiHelper2020
                     {
                         if (sender == BT_1_3)
                         {
-                            TestListe_1.Add(new Vocable { Verb = VerbR, Noun = NounR, Adjective = AdjectiveR });
+                            TestListe_1.Add(new Vocable { Verb = VerbR, Noun = NounR, Adjective = AdjectiveR, ThisVocsLanguage = "English", Language = Sprachen });
                         }
                         else if (sender == BT_2_3)
                         {
-                            TestListe_2.Add(new Vocable { Verb = VerbR, Noun = NounR, Adjective = AdjectiveR });
+                            TestListe_2.Add(new Vocable { Verb = VerbR, Noun = NounR, Adjective = AdjectiveR, ThisVocsLanguage = "German", Language = Sprachen });
                         }
                     }
                 }
