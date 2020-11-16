@@ -23,6 +23,11 @@ namespace RoboFriend_MultiHelper2020
             InitializeComponent();
         }
 
+        class DataAccess
+        {
+
+        }
+
         int IDtoCompare;
         List<EnglishWords> NewList_English = new List<EnglishWords>();
         List<GermanWords> NewList_German = new List<GermanWords>();
