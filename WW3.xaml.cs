@@ -18,17 +18,21 @@ namespace RoboFriend_MultiHelper2020
 {
     public partial class WW3 : Page
     {
+
         public WW3()
         {
             InitializeComponent();
         }
 
-        List<Vocable> TestListe_1 = new List<Vocable>();
-        List<Vocable> TestListe_2 = new List<Vocable>();
+        string FilePath = "Noch keine Liste geladen";
+        public WW3_Classes LabelBindingValues = new WW3_Classes();
 
-        private void BT_1_3_Click(object sender, RoutedEventArgs e)
+        public List<Vocable> TestListe_1 = new List<Vocable>();
+        public List<Vocable> TestListe_2 = new List<Vocable>();
+
+        private void BT_1_3_Click(object sender, RoutedEventArgs e)         // Liste laden
         {
-            string FilePath = null;
+            FilePath = null;
             OpenFileDialog FileDialogNameX = new OpenFileDialog();
             FileDialogNameX.RestoreDirectory = true;
             FileDialogNameX.Filter = "CSV Dateien Anzeigen (*.csv)|*.csv";
@@ -58,18 +62,42 @@ namespace RoboFriend_MultiHelper2020
                         }
                     }
                 }
-                DG_1.ItemsSource = TestListe_1;
-                DG_2.ItemsSource = TestListe_2;
-                LBox_1.Items.Add(".csv List in Itemssource geladen");
+                if (sender == BT_1_3)
+                {
+                    DG_1.ItemsSource = TestListe_1;
+                    LBox_1.Items.Add(".csv List in Itemssource geladen");
+                    LabelBindingValues.ListHeading = FilePath;                  
+                    LB_1.Content = LabelBindingValues.ListHeading;              //Binding braucht INotifyPropertyChanged, darum jetzt einfachere Variante
+                    LBox_1.Items.Add(".Label Updated");
+                }
+                else if (sender == BT_2_3)
+                {
+                    DG_2.ItemsSource = TestListe_2;
+                    LBox_2.Items.Add(".csv List in Itemssource geladen");
+                    LabelBindingValues.ListHeading = FilePath;
+                    LB_2.Content = LabelBindingValues.ListHeading;
+                    LBox_2.Items.Add(".Label Updated");
+                }
+
             }
-
-
 
         }
 
         private void DG_1_AddingNewItem(object sender, AddingNewItemEventArgs e)
         {
             LBox_1.Items.Add("Neuen Datensatz hinzugfügt");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)      // Page wird geladen
+        {
+            LabelBindingValues.ListHeading = FilePath;
+
+            Binding NewBindingX = new Binding();
+            NewBindingX.Source = LabelBindingValues.ListHeading;
+            NewBindingX.Mode = BindingMode.OneWay;
+            NewBindingX.UpdateSourceTrigger = UpdateSourceTrigger.Explicit;
+            LB_1.SetBinding(Label.ContentProperty, NewBindingX);
+            LB_2.SetBinding(Label.ContentProperty, NewBindingX);                    //Binding funktioniert, aber will sich nicht updaten
         }
     }
 }

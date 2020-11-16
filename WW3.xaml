@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:RoboFriend_MultiHelper2020"
       mc:Ignorable="d"
       d:DesignHeight="800" d:DesignWidth="1600"
-      Title="WW3" Background="#FFFFDE0C">
+      Title="WW3" Background="#FFFFDE0C" Loaded="Page_Loaded">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -24,7 +25,9 @@
         </Grid.ColumnDefinitions>
 
         <ListBox Name="LBox_1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Background="#FFF5F505" BorderThickness="5" BorderBrush="#FFF5F505"/>
-        <Label Name="LB_1" Content="DataGrid1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderThickness="5" BorderBrush="#FFF5F505" Background="#FFFFDE0C"/>
+
+        <Label x:Name="LB_1" Content="DataGrid1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderThickness="5" BorderBrush="#FFF5F505" Background="#FFFFDE0C"/>
+
         <Button Name="BT_1_1" Content="empty" Grid.Row="2" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_1_2" Content="empty" Grid.Row="2" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_1_3" Content="Liste laden" Grid.Row="3" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_3_Click"/>
@@ -36,18 +39,6 @@
                 <DataGridTextColumn Binding="{Binding Verb}" Header="Verb" Width="*" MinWidth="40"/>
                 <DataGridTextColumn Binding="{Binding Noun}" Header="Noun" Width="*" MinWidth="40"/>
                 <DataGridTextColumn Binding="{Binding Adjective}" Header="Adjective" Width="*" MinWidth="40"/>
-                <DataGridTemplateColumn Header="Combobox" Width="*" MinWidth="40">
-                <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=VocLanguage}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                    <DataGridTemplateColumn.CellEditingTemplate>
-                        <DataTemplate>
-                            <ComboBox ItemsSource="{Binding Path=EnumLanguage}" SelectedItem="{Binding Path=VocLanguage.English}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellEditingTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -66,6 +57,7 @@
             </DataGrid.Columns>
         </DataGrid>
         
+
     </Grid>
 </Page>
 
