@@ -12,7 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
-
+using System.Collections.ObjectModel;
 
 namespace RoboFriend_MultiHelper2020
 {
@@ -183,10 +183,84 @@ namespace RoboFriend_MultiHelper2020
                 DG_2.Columns.Add(NeueSpalte);
 
             }
+        }
+
+        private void CHB_11_Checked(object sender, RoutedEventArgs e)
+        {
+            DG_1.AutoGenerateColumns = true;
+
+            ObservableCollection<DataGridColumn> SpaltenListe = DG_1.Columns;
+            foreach (DataGridColumn VordefinSpalte in SpaltenListe)
+            {
+                VordefinSpalte.Visibility = Visibility.Collapsed;
+                LBox_1.Items.Add(VordefinSpalte.Visibility.ToString());
+            }
+            
 
         }
 
+        private void CHB_11_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DG_1.AutoGenerateColumns = false;
 
+            ObservableCollection<DataGridColumn> SpaltenListe = DG_1.Columns;
+            foreach (DataGridColumn VordefinSpalte in SpaltenListe)
+            {
+                VordefinSpalte.Visibility = Visibility.Visible;
+                LBox_1.Items.Add(VordefinSpalte.Visibility.ToString());
+            }
+        }
+
+        private void DG_1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)      //falls checkbox aktiv, soll folgendes geprüft werden
+        {
+
+            LBox_1.Items.Add(e.Column.Header.ToString());       
+
+            switch (e.Column.Header.ToString())                         // Header ist ja identisch mit Attributname auf standard, also sucht man gleichzeitig damit, ob in der QuellKlasse das Attribut enthalten ist
+            {
+                case "Verb":
+                    e.Column.CanUserSort = false;
+                    e.Column.Visibility = Visibility.Visible;
+                    e.Column.Header = "SwitchÜberschrift1:";
+                    break;
+                case "Noun":
+                    e.Column.Visibility = Visibility.Visible;
+                    e.Column.Header = "SwitchÜberschrift2:";
+                    break;
+                case "Vorname:":
+                    e.Column.Visibility = Visibility.Visible;
+                    e.Column.Header = "SwitchÜberschrift3:";
+                    break;
+                case "Geburtstag":
+                    e.Column.Visibility = Visibility.Visible;
+                    e.Column.Header = "SwitchÜberschrift4:";
+                    break;
+                default:
+                    e.Column.Visibility = Visibility.Collapsed;
+                    break;
+            }
+        }
+
+        private void BT_1_1_Click(object sender, RoutedEventArgs e)         // Alles löschen
+        {
+            if (LBox_1.HasItems)
+            {
+                LBox_1.Items.Clear();
+            }
+            if (DG_1.HasItems)
+            {
+                DG_1.ItemsSource = null;
+            }
+            if (DG_1.Items.NeedsRefresh)
+            {
+                DG_1.Items.Refresh();
+            }
+        }
+
+        private void BT_1_2_Click(object sender, RoutedEventArgs e)         // ObservativeCollection Versuche
+        {
+
+        }
     }
 
 }

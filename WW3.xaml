@@ -24,17 +24,22 @@
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Name="LBox_1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Background="#FFF5F505" BorderThickness="5" BorderBrush="#FFF5F505"/>
-
+        <ListBox Name="LBox_1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Background="#FFF5F505" BorderThickness="5" BorderBrush="#FFF5F505"/>
+        <StackPanel Grid.Row="4" Grid.Column="0" >
+            <CheckBox Name="CHB_11" Content="AutoGenerateColumns" IsChecked="False" Checked="CHB_11_Checked" Unchecked="CHB_11_Unchecked" />
+            <CheckBox Name="CHB_12" Content="empty" />
+            <CheckBox Name="CHB_13" Content="empty" />
+            <CheckBox Name="CHB_14" Content="empty" />
+        </StackPanel>
         <Label x:Name="LB_1" Content="DataGrid1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderThickness="5" BorderBrush="#FFF5F505" Background="#FFFFDE0C"/>
 
-        <Button Name="BT_1_1" Content="empty" Grid.Row="2" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
-        <Button Name="BT_1_2" Content="empty" Grid.Row="2" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_1_1" Content="CLEAR" Grid.Row="2" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_1_Click"/>
+        <Button Name="BT_1_2" Content="SWITCH List / ObservableCollection" Grid.Row="2" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_2_Click"/>
         <Button Name="BT_1_3" Content="Liste laden" Grid.Row="3" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_3_Click"/>
         <Button Name="BT_1_4" Content="Liste2 laden" Grid.Row="3" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_2_4_Click"/>
 
-        <DataGrid Name="DG_1" ItemsSource="{Binding}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Background="Transparent" RowBackground="#FFAEFF00" AlternatingRowBackground="#FF05C9F5" BorderThickness="5" BorderBrush="#FFF5F505" AutoGenerateColumns="False" 
-                  AddingNewItem="DG_1_AddingNewItem">
+        <DataGrid Name="DG_1" ItemsSource="{Binding}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Background="Transparent" RowBackground="#FFAEFF00" AlternatingRowBackground="#FF05C9F5" BorderThickness="5" BorderBrush="#FFF5F505" 
+                  AutoGenerateColumns="False" AddingNewItem="DG_1_AddingNewItem" AutoGeneratingColumn="DG_1_AutoGeneratingColumn">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Verb}" Header="Verb" Width="*" MinWidth="40"/>
                 <DataGridTextColumn Binding="{Binding Noun}" Header="Noun" Width="*" MinWidth="40"/>
