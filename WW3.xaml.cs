@@ -269,10 +269,16 @@ namespace RoboFriend_MultiHelper2020
 
         private void BT_2_1_Click(object sender, RoutedEventArgs e)         // DG 2 Test Spalten löschen
         {
+            ObservableCollection<DataGridColumn> TestRemoveList = new ObservableCollection<DataGridColumn>();
             DG_2.Items.Refresh();
-            foreach (var item in DG_2.Columns)
+            foreach (DataGridColumn item in DG_2.Columns)
             {
+                TestRemoveList.Add(item);
                 DG_2.Columns.Remove(item);
+            }
+            foreach (var item in TestRemoveList)
+            {
+
             }
             if (DG_2.Items.NeedsRefresh)
             {
