@@ -35,8 +35,14 @@ namespace RoboFriend_MultiHelper2020
             "English", "German"
         };
 
+        List<Kunde> TestListe_3 = new List<Kunde>();
+        List<Kunde> TestListe_4 = new List<Kunde>();
+
         private void BT_1_3_Click(object sender, RoutedEventArgs e)         // Liste laden
         {
+            DG_1.ItemsSource = null;
+            DG_2.ItemsSource = null;
+
             FilePath = null;
             OpenFileDialog FileDialogNameX = new OpenFileDialog();
             FileDialogNameX.RestoreDirectory = true;
@@ -92,6 +98,11 @@ namespace RoboFriend_MultiHelper2020
         {
             LBox_1.Items.Add("Neuen Datensatz hinzugfügt");
         }
+        private void DG_2_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            LBox_1.Items.Add("Neuen Datensatz hinzugfügt");
+        }
+
 
         private void Page_Loaded(object sender, RoutedEventArgs e)      // Page wird geladen
         {
@@ -104,5 +115,78 @@ namespace RoboFriend_MultiHelper2020
             LB_1.SetBinding(Label.ContentProperty, NewBindingX);
             LB_2.SetBinding(Label.ContentProperty, NewBindingX);                    //Binding funktioniert, aber will sich nicht updaten
         }
+
+        private void BT_2_4_Click(object sender, RoutedEventArgs e)
+        {
+            DG_1.ItemsSource = null;
+            DG_2.ItemsSource = null;
+
+            FilePath = null;
+            OpenFileDialog FileDialogNameX = new OpenFileDialog();
+            FileDialogNameX.RestoreDirectory = true;
+            FileDialogNameX.Filter = "CSV Dateien Anzeigen (*.csv)|*.csv";
+            if (FileDialogNameX.ShowDialog() == true)
+            {
+                FilePath = FileDialogNameX.FileName;
+            }
+            if (FilePath != null)
+            {
+                StreamReader SR_X = new StreamReader(FilePath);
+                while (!SR_X.EndOfStream)
+                {
+                    string strLine = SR_X.ReadLine();
+                    string[] strTeile = strLine.Split(';');
+                    string VorN = strTeile[0].Trim();
+                    string NachN = strTeile[1].Trim();
+                    string DateT = strTeile[2].Trim();
+                    if (VorN.Length > 0)
+                    {
+                        if (sender == BT_1_4)
+                        {
+                            TestListe_3.Add(new Kunde(VorN, NachN, DateTime.Now ) { });
+                        }
+                        else if (sender == BT_2_4)
+                        {
+                            TestListe_4.Add(new Kunde(VorN, NachN, DateTime.Parse(DateT)) { });
+                        }
+                    }
+                }
+                if (sender == BT_1_4)
+                {
+                    DG_1.ItemsSource = TestListe_3;
+                    LBox_1.Items.Add(".csv List in Itemssource geladen");
+                    LabelBindingValues.ListHeading = FilePath;
+                    LB_1.Content = LabelBindingValues.ListHeading;              //Binding braucht INotifyPropertyChanged, darum jetzt einfachere Variante
+                    LBox_1.Items.Add(".Label Updated");
+                }
+                else if (sender == BT_2_4)
+                {
+                    DG_2.ItemsSource = TestListe_4;
+                    LBox_2.Items.Add(".csv List in Itemssource geladen");
+                    LabelBindingValues.ListHeading = FilePath;
+                    LB_2.Content = LabelBindingValues.ListHeading;
+                    LBox_2.Items.Add(".Label Updated");
+                    Kunde Fritz = new Kunde("Fritz", "Meyer", DateTime.Now);
+                    TestListe_4.Add(Fritz);
+                    LBox_2.Items.Add("Kunde geadded");
+                    DG_2.Items.Refresh();
+                }
+
+                // Datagrid veränderungen:  DG_2
+
+                DataGridTextColumn NeueSpalte = new DataGridTextColumn();
+                Binding NeuesBindingAttribut = new Binding("KundeID");
+                //Set the properties on the new column
+                NeueSpalte.Binding = NeuesBindingAttribut;
+                NeueSpalte.Header = "Kundennummer:";
+                //Add the column to the DataGrid
+                DG_2.Columns.Add(NeueSpalte);
+
+            }
+
+        }
+
+
     }
+
 }

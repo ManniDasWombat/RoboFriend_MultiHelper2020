@@ -23,28 +23,29 @@ namespace RoboFriend_MultiHelper2020
 
 
     // Unterricht Vererbung: 
-    abstract class Person           // durch abstract kann ich keine new instanz dieser klasse erschaffen. Nutzt man, falls von dieser klasse ausschließlich geerbt werden soll
+    abstract class Person           // durch abstract kann ich keine Instanz/new Object dieser klasse erschaffen. Nutzt man, falls von dieser klasse ausschließlich geerbt werden soll
     {
         public string Vorname { get; private set; }
+        public string Nachname { get; private set; }
         public DateTime Geburtstag { get; private set; }
 
         //Konstruktor
-        public Person(string VornameP, DateTime GebP)       // so kann ich die Klasse von außen erreichen ohne sie public zu machen
+        public Person(string VornameP, string NachnameP, DateTime GebP)       // so kann ich die Klasse von außen erreichen ohne sie public zu machen
         {
             Vorname = VornameP;
+            Nachname = NachnameP;
             Geburtstag = GebP;
         }
     }
 
     class Kunde : Person
     {
+        public string KundeID { get; set; }        // kommt zusätzlich hinzu zu dem, was geerbt wird
 
-        public int KundeID { get; set; }
-
-        public Kunde(string VornameP, DateTime GebP)
-            : base(VornameP, GebP)
+        public Kunde(string VP, string NP, DateTime GP)
+            : base(VP, NP, GP)                              // mit : base wird der Konstruktor der Basisklasse aufgerufen
         {
-            KundeID = 23423;
+            KundeID = Guid.NewGuid().ToString("N").Substring(0, 20);        // zusätzlich
         }
     }
 }

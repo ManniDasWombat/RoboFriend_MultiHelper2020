@@ -31,9 +31,9 @@
         <Button Name="BT_1_1" Content="empty" Grid.Row="2" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_1_2" Content="empty" Grid.Row="2" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_1_3" Content="Liste laden" Grid.Row="3" Grid.Column="1" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_3_Click"/>
-        <Button Name="BT_1_4" Content="empty" Grid.Row="3" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_1_4" Content="Liste2 laden" Grid.Row="3" Grid.Column="2" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_2_4_Click"/>
 
-        <DataGrid Name="DG_1" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Background="Transparent" RowBackground="#FFAEFF00" AlternatingRowBackground="#FF05C9F5" BorderThickness="5" BorderBrush="#FFF5F505" AutoGenerateColumns="False" 
+        <DataGrid Name="DG_1" ItemsSource="{Binding}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Background="Transparent" RowBackground="#FFAEFF00" AlternatingRowBackground="#FF05C9F5" BorderThickness="5" BorderBrush="#FFF5F505" AutoGenerateColumns="False" 
                   AddingNewItem="DG_1_AddingNewItem">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Verb}" Header="Verb" Width="*" MinWidth="40"/>
@@ -61,13 +61,13 @@
         <Button Name="BT_2_1" Content="empty" Grid.Row="2" Grid.Column="3" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_2_2" Content="empty" Grid.Row="2" Grid.Column="4" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_2_3" Content="Liste laden" Grid.Row="3" Grid.Column="3" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_3_Click"/>
-        <Button Name="BT_2_4" Content="empty" Grid.Row="3" Grid.Column="4" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_2_4" Content="Liste2 laden" Grid.Row="3" Grid.Column="4" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_2_4_Click"/>
 
-        <DataGrid Name="DG_2" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" Background="Transparent" RowBackground="#FF48D605" AlternatingRowBackground="#FF08EBF5" BorderThickness="5" BorderBrush="#FFF5F505" AutoGenerateColumns="False">
+        <DataGrid Name="DG_2" ItemsSource="{Binding}" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" Background="Transparent" RowBackground="#FF48D605" AlternatingRowBackground="#FF08EBF5" BorderThickness="5" BorderBrush="#FFF5F505" AutoGenerateColumns="False" AddingNewItem="DG_2_AddingNewItem">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Verb}" Header="Verb" Width="*" MinWidth="40"/>
-                <DataGridTextColumn Binding="{Binding Noun}" Header="Noun" Width="*" MinWidth="40"/>
-                <DataGridTextColumn Binding="{Binding Adjective}" Header="Adjective" Width="*" MinWidth="40"/>
+                <DataGridTextColumn Binding="{Binding Vorname}" Header="Vorname:" Width="*" MinWidth="40"/>
+                <DataGridTextColumn Binding="{Binding Nachname}" Header="Nachname:" Width="*" MinWidth="40"/>
+                <DataGridTextColumn Binding="{Binding Geburtstag}" Header="Geburtstag:" Width="*" MinWidth="40"/>
             </DataGrid.Columns>
         </DataGrid>
         
