@@ -63,7 +63,7 @@
 
         <ListBox Name="LBox_2" Grid.Row="0" Grid.Column="5" Grid.RowSpan="4" Background="#FFF5F505" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Label Name="LB_2" Content="DataGrid2" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderThickness="5" BorderBrush="#FFF5F505"/>
-        <Button Name="BT_2_1" Content="empty" Grid.Row="2" Grid.Column="3" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
+        <Button Name="BT_2_1" Content="RemoveTest Column" Grid.Row="2" Grid.Column="3" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_2_1_Click"/>
         <Button Name="BT_2_2" Content="empty" Grid.Row="2" Grid.Column="4" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505"/>
         <Button Name="BT_2_3" Content="Liste laden" Grid.Row="3" Grid.Column="3" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_1_3_Click"/>
         <Button Name="BT_2_4" Content="Liste2 laden" Grid.Row="3" Grid.Column="4" Background="#FFFFDE0C" BorderThickness="5" BorderBrush="#FFF5F505" Click="BT_2_4_Click"/>

@@ -41,7 +41,9 @@ namespace RoboFriend_MultiHelper2020
         private void BT_1_3_Click(object sender, RoutedEventArgs e)         // Liste laden
         {
             DG_1.ItemsSource = null;
-            DG_2.ItemsSource = null;
+
+            DG_1.Items.Refresh();
+            DG_2.Items.Refresh();
 
             FilePath = null;
             OpenFileDialog FileDialogNameX = new OpenFileDialog();
@@ -118,8 +120,10 @@ namespace RoboFriend_MultiHelper2020
 
         private void BT_2_4_Click(object sender, RoutedEventArgs e)
         {
-            DG_1.ItemsSource = null;
             DG_2.ItemsSource = null;
+
+            DG_1.Items.Refresh();
+            DG_2.Items.Refresh();
 
             FilePath = null;
             OpenFileDialog FileDialogNameX = new OpenFileDialog();
@@ -254,12 +258,27 @@ namespace RoboFriend_MultiHelper2020
             if (DG_1.Items.NeedsRefresh)
             {
                 DG_1.Items.Refresh();
+                LBox_1.Items.Add("needed Refresh");
             }
         }
 
         private void BT_1_2_Click(object sender, RoutedEventArgs e)         // ObservativeCollection Versuche
         {
 
+        }
+
+        private void BT_2_1_Click(object sender, RoutedEventArgs e)         // DG 2 Test Spalten löschen
+        {
+            DG_2.Items.Refresh();
+            foreach (var item in DG_2.Columns)
+            {
+                DG_2.Columns.Remove(item);
+            }
+            if (DG_2.Items.NeedsRefresh)
+            {
+                DG_2.Items.Refresh();
+                LBox_2.Items.Add("needed Refresh");
+            }
         }
     }
 
